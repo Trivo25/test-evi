@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Evidence — Service agreement review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#document">Skip to document</a>
+<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8zM14 3v5h5M8 12h8M8 16h6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-review" viewBox="0 0 24 24"><path d="M9 5H5v16h14V5h-4M9 3h6v4H9zM8 12h8M8 16h5"/></symbol>
+  <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 15V3m-4 4 4-4 4 4M5 13v7h14v-7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="m8 3 8 0-1 6 3 4H6l3-4zM12 13v8"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></symbol>
+</defs></svg>
+<header class="topbar">
+  <a class="wordmark" href="index.html" aria-label="Evidence home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>Evidence<span class="brand-dot">.</span></a>
+  <span class="demo-badge">Demo</span>
+  <div class="top-actions">
+    <label class="workspace-select"><span class="sr-only">Workspace specialisation (preview only)</span><select><option>General workspace</option><option>Legal · coming soon</option><option>Healthcare · coming soon</option></select></label>
+    <details class="review-menu">
+      <summary class="button primary"><svg><use href="#i-review"/></svg>Review <span class="button-count">2</span></summary>
+      <div class="review-popover">
+        <div class="panel-heading"><h2>Review findings</h2><span class="eyebrow">[ 02 ]</span></div>
+        <p class="muted">Human review pending · sample checklist</p>
+        <div class="finding"><span class="status red">Conflicting evidence</span><h3><a href="#incident-statement">01 · Incident notification</a></h3><p>72 hours after confirmation and 24 hours after discovery use different periods and triggers. Neither passage establishes priority.</p><label class="check-row"><input type="checkbox"> Confirm which clause governs.</label></div>
+        <div class="finding"><span class="status amber">Partially supported</span><h3><a href="#deletion-statement">02 · Data deletion</a></h3><p>“Within 30 days” has no support in the schedule.</p><p><strong>Proposed correction</strong></p><p class="correction" contenteditable="true" role="textbox" aria-label="Edit proposed correction" aria-multiline="true">The supplier must delete customer data following termination. The deletion deadline is not specified and needs clarification.</p><label class="check-row"><input type="checkbox"> Remove the deadline and request clarification.</label><label class="check-row"><input type="checkbox"> Recheck the citation after editing.</label></div>
+      </div>
+    </details>
+    <button class="button export" disabled><svg><use href="#i-export"/></svg>Export</button>
+  </div>
+</header>
+<main>
+  <section class="project-heading" aria-labelledby="project-title">
+    <div><h1 id="project-title">Service agreement review<span class="heading-dot">.</span></h1><p class="project-status">3 included sources <span>·</span> 2 review findings <span>·</span> Draft v3</p></div>
+  </section>
+  <div class="workspace">
+    <aside class="sources panel" aria-labelledby="sources-heading">
+      <details class="source-drawer"><summary class="panel-heading main-panel-heading"><span id="sources-heading">Sources</span><span class="source-summary">3 included · 1 excluded <span class="disclosure-arrow">⌄</span></span></summary>
+      <div class="source-drawer-body">
+      <div class="source-actions"><button class="button primary" disabled><svg><use href="#i-plus"/></svg>Upload PDF</button><details class="add-menu"><summary class="button" aria-label="Add source"><svg><use href="#i-plus"/></svg></summary><div class="source-options"><strong>Add source</strong><button disabled>Local document · coming soon</button><button disabled>PubMed · not connected</button></div></details></div>
+      <nav class="source-list" aria-label="Project documents">
+        <a class="source-row" href="#evidence-1"><svg class="file-icon"><use href="#i-file"/></svg><span><strong>Service Agreement</strong><small>v2 <span>·</span> PDF</small><span class="source-state"><span class="green-text">Included</span><span class="pin"><svg><use href="#i-pin"/></svg>Pinned</span></span></span></a>
+        <a class="source-row" href="#evidence-2"><svg class="file-icon"><use href="#i-file"/></svg><span><strong>Security Addendum</strong><small>v1 <span>·</span> PDF</small><span class="source-state green-text">Included</span></span></a>
+        <a class="source-row selected" href="#evidence-3" aria-current="true"><svg class="file-icon"><use href="#i-file"/></svg><span><strong>Data Handling Schedule</strong><small>v1 <span>·</span> PDF</small><span class="source-state green-text">Included <span class="selected-label">Selected</span></span></span></a>
+        <div class="source-row excluded"><svg class="file-icon"><use href="#i-file"/></svg><span><strong>Service Agreement</strong><small>v1 <span>·</span> PDF</small><span class="source-state">Excluded · earlier version</span></span></div>
+      </nav>
+      <details class="context"><summary>Project context <span class="disclosure-arrow">⌄</span></summary><div><p class="eyebrow">TASK INSTRUCTIONS</p><p>Compare notification and deletion duties. Flag gaps. Do not assume which clause takes priority.</p><p class="context-label"><svg><use href="#i-check"/></svg>Accepted correction</p><p>Keep “discovery” and “confirmation” distinct. They are different triggers.</p><p class="source-note">Included sources are available to the task. Excluded sources cannot be used. Pinning gives priority, not proof.</p><span class="muted small">Example retained context</span></div></details>
+      <details class="templates"><summary>Templates &amp; skills <span class="disclosure-arrow">⌄</span></summary><p>General review is shown. Legal clause review and Healthcare literature review are future options.</p></details>
+      </div>
+      </details>
+    </aside>
+      <section class="chat panel" id="chat" aria-labelledby="chat-heading">
+        <div class="panel-heading main-panel-heading chat-heading"><h2 id="chat-heading"><svg><use href="#i-spark"/></svg>Chat with Evidence</h2></div>
+        <div class="chat-body">
+        <div class="conversation">
+        <div class="message user-message"><span class="message-avatar">JD</span><div><span class="message-name">You</span><p>Compare the incident notification and data deletion requirements. Draft a short summary and flag anything that needs review.</p></div></div>
+        <div class="message assistant-message"><span class="message-avatar ai-avatar"><svg><use href="#i-spark"/></svg></span><div><span class="message-name">Evidence <span class="muted">· sample response</span></span><p>Draft ready. Two points need review. Select a citation to check the source.</p></div></div>
+        </div>
+        <div class="quick-actions"><a href="#incident-statement">Compare sources <span>↗</span></a><a href="#document">Draft summary <span>↗</span></a><a href="#evidence-3">Review document <span>↗</span></a></div>
+        <div class="composer"><label for="prompt">Your next instruction</label><textarea id="prompt" rows="3" placeholder="Ask a question or request a revision…"></textarea><div><span><svg><use href="#i-file"/></svg>3 included sources</span><button class="send-button" disabled aria-label="Send request (unavailable in prototype)">Send<svg><use href="#i-arrow"/></svg></button></div></div>
+        </div>
+      </section>
+      <div class="editor panel">
+        <div class="panel-heading main-panel-heading"><h2>Document</h2><div class="document-actions"><a href="#prompt">Revise in chat ↗</a><span class="draft-badge">Draft v3</span></div></div>
+        <div class="toolbar" role="toolbar" aria-label="Illustrative formatting controls"><button disabled class="text-style">Normal text <span>⌄</span></button><span class="toolbar-divider"></span><button disabled aria-label="Bold"><b>B</b></button><button disabled aria-label="Italic"><i>I</i></button><button disabled aria-label="Underline"><u>U</u></button><span class="toolbar-divider"></span><button disabled aria-label="Bulleted list">☷</button><button disabled aria-label="Insert link">↗</button><span class="toolbar-caption">Formatting preview</span></div>
+        <article class="document" id="document" tabindex="-1" aria-labelledby="document-title">
+          <div contenteditable="true" role="textbox" aria-label="Draft document, temporary edits are not saved" aria-multiline="true" spellcheck="false">
+            <h2 id="document-title">Review summary</h2>
+            <p class="document-deck">Incident notification &amp; data deletion</p>
+            <h3>Incident notification</h3>
+            <p id="incident-statement">The agreement allows <strong>72 hours after confirmation</strong>. <a class="citation" href="#evidence-1" contenteditable="false" aria-label="Citation 1: Service Agreement v2">1</a> The addendum allows <strong>24 hours after discovery</strong>. <a class="citation" href="#evidence-2" contenteditable="false" aria-label="Citation 2: Security Addendum v1">2</a></p>
+            <table><caption class="sr-only">Comparison of incident notification clauses</caption><thead><tr><th scope="col">Source</th><th scope="col">Period</th><th scope="col">Trigger</th></tr></thead><tbody><tr><th scope="row">Agreement v2 <a class="citation" href="#evidence-1" contenteditable="false" aria-label="Citation 1">1</a></th><td>72 hours</td><td>Confirmation</td></tr><tr><th scope="row">Addendum v1 <a class="citation" href="#evidence-2" contenteditable="false" aria-label="Citation 2">2</a></th><td>24 hours</td><td>Discovery</td></tr></tbody></table>
+            <div class="inline-finding" contenteditable="false"><span class="finding-dot red-dot"></span><p><strong>Needs review.</strong> Periods and triggers differ. Clause priority is unresolved.</p></div>
+            <h3>Data deletion</h3>
+            <p class="selected-statement" id="deletion-statement">The supplier must delete customer data <mark>within 30 days</mark> following termination of the agreement. <a class="citation active" href="#evidence-3" contenteditable="false" aria-label="Citation 3: Data Handling Schedule v1">3</a><span class="selection-caption" contenteditable="false">Selected statement <span>↗ Evidence</span></span></p>
+            <div class="recheck-note" contenteditable="false"><span class="status amber">Needs recheck after edit</span></div>
+          </div>
+          <div class="document-footer">Temporary edits · not saved</div>
+        </article>
+      </div>
+
+    <aside class="evidence panel" aria-labelledby="evidence-heading">
+      <div class="panel-heading main-panel-heading"><h2 id="evidence-heading">Evidence</h2><span class="muted">Check a citation</span></div>
+      <nav class="evidence-tabs" aria-label="Choose citation"><a href="#evidence-1">Citation 1</a><a href="#evidence-2">Citation 2</a><a href="#evidence-3">Citation 3</a></nav>
+      <section class="evidence-card default-evidence" id="evidence-3" tabindex="-1" aria-labelledby="evidence-3-heading">
+        <div class="evidence-card-label"><span class="citation active">3</span><h3 id="evidence-3-heading">Data deletion</h3><span class="selected-indicator">Selected</span></div>
+        <div class="claim"><span class="eyebrow">DRAFT STATEMENT</span><p>“The supplier must delete customer data <mark>within 30 days</mark> following termination of the agreement.”</p></div>
+        <div class="passage-heading"><svg><use href="#i-file"/></svg><div><strong>Data Handling Schedule <span>v1</span></strong><small>Page 4 · § 6, Data deletion</small></div></div>
+        <blockquote><p class="surrounding">End-of-agreement obligations</p><p>“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</p></blockquote>
+        <div class="assessment"><span class="eyebrow">AUTOMATED ASSESSMENT</span><span class="status amber">◐ &nbsp;Partially supported</span><p>The source supports deletion after termination. It gives <strong>no deadline</strong>, so “within 30 days” is unsupported.</p></div>
+        <details class="proposed"><summary>Proposed correction <span>⌄</span></summary><p>“The supplier must delete customer data following termination. The deletion deadline is not specified and needs clarification.”</p><a href="#deletion-statement">Return to statement <span>↗</span></a></details>
+        <div class="human-state"><span class="hollow-dot"></span>Human review pending</div>
+      </section>
+      <section class="evidence-card compact-evidence" id="evidence-1" tabindex="-1" aria-labelledby="evidence-1-heading"><div class="evidence-card-label"><span class="citation">1</span><h3 id="evidence-1-heading">Service Agreement <span>v2</span></h3></div><span class="passage-location">Page 8 · § 9.2, Incident notification</span><p class="matched-claim">Statement: notification within 72 hours after confirmation.</p><blockquote><p>“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</p></blockquote><p class="evidence-context">Context: supplier notification duty to the customer. This passage does not state priority over the addendum.</p><span class="eyebrow assessment-label">AUTOMATED ASSESSMENT</span><span class="status green">✓ &nbsp;Supported</span><p class="assessment-note">Supports the agreement’s period and trigger.</p><div class="human-state"><span class="hollow-dot"></span>Human review pending</div><a class="back-link" href="#incident-statement">Back to statement ↗</a></section>
+      <section class="evidence-card compact-evidence" id="evidence-2" tabindex="-1" aria-labelledby="evidence-2-heading"><div class="evidence-card-label"><span class="citation">2</span><h3 id="evidence-2-heading">Security Addendum <span>v1</span></h3></div><span class="passage-location">Page 2 · § 3, Incident notification</span><p class="matched-claim">Statement: notification within 24 hours after discovery.</p><blockquote><p>“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</p></blockquote><p class="evidence-context">Context: supplier notification duty to the customer. This passage does not state priority over the agreement.</p><span class="eyebrow assessment-label">AUTOMATED ASSESSMENT</span><span class="status red">Conflicting evidence</span><p class="assessment-note">Supports the addendum’s wording, but differs from citation 1 in period and trigger. Priority is unresolved.</p><div class="human-state"><span class="hollow-dot"></span>Human review pending</div><a class="back-link" href="#incident-statement">Back to statement ↗</a></section>
+    </aside>
+  </div>
+  <footer class="demo-notice"><span><span class="tiny-square"></span> DEMO DATA</span><p>Fictional documents. Local preview only; changes are not saved.</p><span class="footer-brand">Evidence / 001</span></footer>
+</main>
+</body>
+</html>
