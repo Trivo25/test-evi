@@ -231,6 +231,7 @@
         </article>
             </div>
             </details>
+            <a class="btn btn--sm docfold__open" href="#doc-modal">Open <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
           </div>
         </div>
         <div class="composer">
@@ -318,5 +319,66 @@
   </div>
 </main>
 
+<div class="modal" id="doc-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <a class="modal__backdrop" href="#_" aria-label="Close"></a>
+  <div class="modal__panel">
+    <div class="modal__head">
+      <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
+      <span id="modal-title" class="modal__title">Review brief</span>
+      <span class="badge-draft">DRAFT</span>
+      <span class="chip chip--count">Draft v3</span>
+      <span class="spacer"></span>
+      <a class="btn btn--sm" href="#_"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-x"/></svg>Close</a>
+    </div>
+    <div class="modal__body">
+        <article class="paper paper--popout" id="draft-popout" aria-label="Review brief, draft v3">
+          <div class="paper__toolbar">
+            <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
+            <span>Review brief</span>
+            <span class="badge-draft">DRAFT</span>
+            <span class="spacer"></span>
+            <button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit paragraph</button>
+          </div>
+          <div class="fmt-bar" role="toolbar" aria-label="Formatting">
+            <label class="sr-only" for="fmt-font-m">Font</label>
+            <select id="fmt-font-m" class="fmt-select"><option>Georgia</option><option>Inter</option><option>Times New Roman</option></select>
+            <label class="sr-only" for="fmt-size-m">Font size</label>
+            <select id="fmt-size-m" class="fmt-select fmt-select--sm"><option>11</option><option>12</option><option>13</option><option>14</option><option selected>15</option><option>16</option><option>18</option><option>24</option></select>
+            <span class="fmt-sep"></span>
+            <button type="button" class="fmt-btn fmt-btn--on" aria-label="Bold" aria-pressed="true"><b>B</b></button>
+            <button type="button" class="fmt-btn" aria-label="Italic"><i>I</i></button>
+            <button type="button" class="fmt-btn" aria-label="Underline"><u>U</u></button>
+            <span class="fmt-sep"></span>
+            <label class="fmt-btn fmt-color" title="Text color"><span class="fmt-color__a">A</span><input type="color" value="#202326" aria-label="Text color"></label>
+            <label class="fmt-btn fmt-color" title="Highlight"><span class="fmt-color__a fmt-color__a--hl">A</span><input type="color" value="#f6e6b8" aria-label="Highlight color"></label>
+            <span class="fmt-sep"></span>
+            <button type="button" class="fmt-btn fmt-btn--on" aria-label="Align left" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-align-left"/></svg></button>
+            <button type="button" class="fmt-btn" aria-label="Align center"><svg class="icon" aria-hidden="true"><use href="#i-align-center"/></svg></button>
+            <button type="button" class="fmt-btn" aria-label="Bulleted list"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg></button>
+            <button type="button" class="fmt-btn" aria-label="Insert link"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></button>
+            <span class="fmt-spacer"></span>
+            <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Undo"><svg class="icon" aria-hidden="true"><use href="#i-undo"/></svg></button>
+            <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Redo"><svg class="icon" aria-hidden="true"><use href="#i-redo"/></svg></button>
+          </div>
+          <div class="paper__body">
+            <div class="doc">
+              <h2>Obligations &amp; open questions</h2>
+              <p class="prepared">Prepared from 3 source documents</p>
+
+              <h3><span class="num">1</span>Incident notification</h3>
+              <p>Notice within 72 hours after the supplier confirms an incident.<a class="cite has-tip" href="#e1" aria-label="Evidence E1, Service Agreement">E1<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E1</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Service Agreement</span><span class="tip__meta">Page 4 · §8 · Source v2</span></span></span></a> Notice within 24 hours after the supplier discovers one.<a class="cite has-tip" href="#e2" aria-label="Evidence E2, Security Addendum">E2<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E2</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Security Addendum</span><span class="tip__meta">Page 2 · §2 · Source v1</span></span></span></a> The periods and the triggers differ. Neither document says which prevails.</p>
+
+              <h3><span class="num">2</span>Data deletion</h3>
+              <p class="attention" id="deletion-statement-popout">The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination.<a class="cite has-tip" href="#e3" aria-label="Evidence E3, Data Handling Schedule">E3<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a></p>
+            </div>
+          </div>
+          <div class="paper__footer">
+            <span><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>3 linked passages</span>
+            <span><svg class="icon" aria-hidden="true"><use href="#i-circle-dashed"/></svg>Human review pending</span>
+          </div>
+        </article>
+    </div>
+  </div>
+</div>
 </body>
 </html>
