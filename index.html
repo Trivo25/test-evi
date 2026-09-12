@@ -166,8 +166,9 @@
       <div class="col-head">
         <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
         <h2 id="chat-heading">Chat</h2>
+        <span class="chip chip--count">Draft v3</span>
       </div>
-      <section class="chat" aria-labelledby="chat-heading">
+      <section class="chat chat--main" aria-labelledby="chat-heading">
         <div class="chat__thread">
           <div class="msg msg--user">
             <p class="msg__text">Compare these documents and draft a short brief. Flag anything I need to check.</p>
@@ -176,39 +177,10 @@
             <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
             <div class="msg__body">
               <p class="msg__text">The draft is ready. The notification terms differ, and the deletion deadline needs support.</p>
-              <a class="output-card" href="#draft" aria-label="Open Review brief, draft v3">
-                <span class="output-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-file-pen"/></svg></span>
-                <span>
-                  <span class="output-card__title">Review brief</span>
-                  <span class="output-card__meta">Draft v3 · 3 linked passages</span>
-                </span>
-                <span class="btn btn--sm btn--ghost">Open <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
-              </a>
             </div>
           </div>
-        </div>
-        <div class="composer">
-          <label class="sr-only" for="composer-input">Message</label>
-          <textarea id="composer-input" rows="2" placeholder="Ask, compare, or revise this draft…"></textarea>
-          <div class="composer__row">
-            <label class="tool-btn" title="Upload document"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon" aria-hidden="true"><use href="#i-paperclip"/></svg><span class="sr-only">Upload document</span></label>
-            <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Web search</label>
-            <label class="tog"><input type="checkbox" checked><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg>Tools</label>
-            <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
-            <span class="composer__spacer"></span>
-            <button type="button" class="tool-btn" aria-label="Voice input"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>
-            <button type="button" class="btn btn--send" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
-          </div>
-        </div>
-      </section>
-
-      <div class="col-head col-head--doc">
-        <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
-        <h2 id="draft-heading">Working document</h2>
-        <span class="chip chip--count">Draft v3</span>
-      </div>
-
-      <div class="paper-wrap">
+          <div class="msg msg--doc">
+            <div class="paper-wrap">
         <article class="paper" id="draft" aria-label="Review brief, draft v3">
           <div class="paper__toolbar">
             <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
@@ -235,8 +207,8 @@
             <button type="button" class="fmt-btn" aria-label="Bulleted list"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg></button>
             <button type="button" class="fmt-btn" aria-label="Insert link"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></button>
             <span class="fmt-spacer"></span>
-            <button type="button" class="fmt-btn" aria-label="Undo"><svg class="icon" aria-hidden="true"><use href="#i-undo"/></svg></button>
-            <button type="button" class="fmt-btn" aria-label="Redo"><svg class="icon" aria-hidden="true"><use href="#i-redo"/></svg></button>
+            <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Undo"><svg class="icon" aria-hidden="true"><use href="#i-undo"/></svg></button>
+            <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Redo"><svg class="icon" aria-hidden="true"><use href="#i-redo"/></svg></button>
           </div>
           <div class="paper__body">
             <div class="doc">
@@ -255,7 +227,23 @@
             <span><svg class="icon" aria-hidden="true"><use href="#i-circle-dashed"/></svg>Human review pending</span>
           </div>
         </article>
-      </div>
+            </div>
+          </div>
+        </div>
+        <div class="composer">
+          <label class="sr-only" for="composer-input">Message</label>
+          <textarea id="composer-input" rows="2" placeholder="Ask, compare, or revise this draft…"></textarea>
+          <div class="composer__row">
+            <label class="tool-btn" title="Upload document"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon" aria-hidden="true"><use href="#i-paperclip"/></svg><span class="sr-only">Upload document</span></label>
+            <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Web search</label>
+            <label class="tog"><input type="checkbox" checked><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg>Tools</label>
+            <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
+            <span class="composer__spacer"></span>
+            <button type="button" class="tool-btn" aria-label="Voice input"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>
+            <button type="button" class="btn btn--send" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+          </div>
+        </div>
+      </section>
     </section>
 
     <!-- evidence -->
