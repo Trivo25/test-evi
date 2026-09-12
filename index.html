@@ -68,7 +68,7 @@
     <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-quote"/></svg></span><span class="sb-label">evidence</span></a>
     <label class="sb-btn sb-toggle" for="sb-toggle" title="Collapse sidebar"><svg class="icon" aria-hidden="true"><use href="#i-panel-left"/></svg><span class="sr-only">Collapse sidebar</span></label>
   </div>
-  <button type="button" class="sb-new"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg><span class="sb-label">New chat</span></button>
+  <button type="button" class="sb-new" id="new-chat"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg><span class="sb-label">New chat</span></button>
   <nav class="sb-menu" aria-label="Main">
     <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="sb-label">Search</span></button>
     <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><span class="sb-label">Projects</span></button>
@@ -391,6 +391,7 @@
           <label class="sr-only" for="composer-input">Message</label>
           <textarea id="composer-input" rows="2" placeholder="Ask, compare, or revise this draft…"></textarea>
           <div class="composer__row">
+            <div class="composer__tools">
             <label class="tool-btn" title="Upload document"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon" aria-hidden="true"><use href="#i-paperclip"/></svg><span class="sr-only">Upload document</span></label>
             <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Web search</label>
             <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-book"/></svg>PubMed</label>
@@ -398,10 +399,12 @@
             <button type="button" class="tool-btn" aria-label="Add tools or sources" title="Add tools or sources"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
             <label class="sel"><span class="sr-only">Mode</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg><select><option>Balanced</option><option>Careful</option><option>Quick</option></select></label>
             <label class="sel"><span class="sr-only">Speed</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg><select><option>Standard</option><option>Fast</option><option>Thorough</option></select></label>
-            <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
-            <span class="composer__spacer"></span>
+            <span class="chip chip--source" id="composer-sources"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
+            </div>
+            <div class="composer__end">
             <button type="button" class="tool-btn" aria-label="Voice input"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>
             <button type="button" class="btn btn--send" id="send-btn" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+            </div>
           </div>
         </div>
       </section>
@@ -480,6 +483,7 @@
     var text = input.value.trim();
     if (!text) return;
     input.value = '';
+    var empty = thread.querySelector('.empty'); if (empty) empty.remove();
     thread.appendChild(el('<div class="msg msg--user"><div class="msg__bubble"><span class="msg__name">You</span><p class="msg__text">' + esc(text) + '</p></div></div>'));
     var thinking = el('<div class="msg msg--ai msg--working" aria-live="polite"><span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span><div class="msg__body"><p class="msg__text working"><span class="working__dots working__dots--live" aria-hidden="true"><i></i><i></i><i></i></span><span class="working__label"></span></p></div></div>');
     thread.appendChild(thinking);
@@ -505,6 +509,32 @@
       }
       menu.removeAttribute('open');
     });
+  });
+  // new chat: empty canvas, no sources, fresh recents entry (reload the page to get the example back)
+  document.getElementById('new-chat').addEventListener('click', function () {
+    thread.innerHTML = '<div class="empty">' +
+      '<span class="empty__mark" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>' +
+      '<h3 class="empty__title">What would you like to review?</h3>' +
+      '<p class="empty__text">Add sources on the left, then ask, compare, or draft.</p>' +
+      '<div class="empty__chips">' +
+        '<button type="button" class="btn btn--sm" data-fill="Compare two contracts and flag the differences.">Compare two contracts</button>' +
+        '<button type="button" class="btn btn--sm" data-fill="Summarize this schedule in five bullet points.">Summarize a schedule</button>' +
+        '<button type="button" class="btn btn--sm" data-fill="List every deadline and its triggering event.">Find deadlines</button>' +
+      '</div></div>';
+    thread.querySelectorAll('[data-fill]').forEach(function (b) { b.addEventListener('click', function () { input.value = b.dataset.fill; input.focus(); }); });
+    document.querySelector('.column--sources .source-list').innerHTML =
+      '<li class="source-card source-card--ghost"><div class="source-card__body"><span class="thumb thumb--empty" aria-hidden="true"></span><div><span class="source-card__name muted">No sources yet</span><div class="source-card__meta">PDF, up to 50 MB</div></div></div>' +
+      '<div class="source-card__foot"><label class="btn btn--sm"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plus"/></svg>Add a source</label></div></li>';
+    document.querySelector('.column--sources .col-head .chip').textContent = '0 in context';
+    document.querySelector('.src-rail .chip').textContent = '0';
+    document.getElementById('composer-sources').lastChild.textContent = '0 sources';
+    var draftChip = document.querySelector('.column--center .col-head .chip'); if (draftChip) draftChip.remove();
+    document.querySelector('.crumbs .current').textContent = 'New chat';
+    var active = document.querySelector('.sb-chat.is-active'); if (active) { active.classList.remove('is-active'); active.removeAttribute('aria-current'); }
+    var hist = document.querySelector('.sb-history');
+    if (!hist.querySelector('.sb-chat--new')) hist.insertAdjacentHTML('afterbegin', '<a class="sb-chat sb-chat--new is-active" href="#" aria-current="page"><span class="sb-label">New chat</span></a>');
+    statuses = ['Reading your message', 'Checking your sources', 'Drafting a reply'];
+    input.value = ''; input.focus();
   });
   send.addEventListener('click', submit);
   input.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submit(); } });

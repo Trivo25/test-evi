@@ -649,6 +649,14 @@ mark.has-tip { cursor: help; }
 .steps--final .step-item__check { opacity: 1; }
 .steps--final .step-item__spin { display: none; }
 
+/* empty canvas after new chat */
+.empty { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 40px 16px; text-align: center; }
+.empty__mark { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 6px; border-radius: 10px; background: var(--primary); color: #fff; }
+.empty__mark .icon { width: 20px; height: 20px; }
+.empty__title { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
+.empty__text { color: var(--text-muted); }
+.empty__chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 10px; }
+
 /* per-reply actions */
 .msg-menu { position: relative; margin-left: auto; align-self: flex-start; flex-shrink: 0; opacity: .5; }
 .msg-menu:hover, .msg-menu:focus-within, .msg-menu[open] { opacity: 1; }
@@ -678,8 +686,9 @@ mark.has-tip { cursor: help; }
 }
 .composer textarea:focus { outline: none; }
 .composer textarea::placeholder { color: #7a838d; opacity: 1; }
-.composer__row { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
-.composer__spacer { flex: 1; }
+.composer__row { display: flex; align-items: flex-end; gap: 8px; margin-top: 4px; }
+.composer__tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; flex: 1; min-width: 0; }
+.composer__end { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .tool-btn {
   display: inline-grid; place-items: center; width: 32px; height: 32px;
   border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text-muted); cursor: pointer;
