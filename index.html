@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="skip-link" href="#draft">Skip to working document</a>
+<a class="skip-link" href="#composer-input">Skip to chat</a>
 <svg xmlns="http://www.w3.org/2000/svg" class="icon-sprite" aria-hidden="true" focusable="false"><defs>
 <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
 <symbol id="i-files" viewBox="0 0 24 24"><path d="M20 7h-3a2 2 0 0 1-2-2V2"/><path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l5 5v9a2 2 0 0 1-2 2Z"/><path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"/></symbol>
@@ -63,13 +63,7 @@
       <h1>Vendor agreement</h1>
       <p class="subtitle">Compare obligations. Build a reviewable brief.</p>
     </div>
-    <a class="btn" href="workflow.html"><svg class="icon" aria-hidden="true"><use href="#i-workflow"/></svg>Save as workflow</a>
   </div>
-  <nav class="nav" aria-label="Project views">
-    <a href="index.html" aria-current="page">Workspace</a>
-    <a href="outputs.html">Outputs <span class="count">2</span></a>
-    <a href="workflow.html">Workflow</a>
-  </nav>
 </section>
 
 <main class="work-area">
@@ -156,17 +150,45 @@
           </div>
         </li>
       </ul>
-
-      <div class="instructions">
-        <h3>Project instructions</h3>
-        <p>Keep exact deadlines and triggering events. Flag missing information.</p>
-        <p><span class="label"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg> Saved correction</span>“discovery” and “confirmation” are different triggers.</p>
-      </div>
     </aside>
 
     <!-- working document and chat -->
-    <section class="column column--center" aria-labelledby="draft-heading">
+    <section class="column column--center" aria-labelledby="chat-heading">
       <div class="col-head">
+        <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
+        <h2 id="chat-heading">Chat</h2>
+      </div>
+      <section class="chat" aria-labelledby="chat-heading">
+        <div class="chat__thread">
+          <div class="msg msg--user">
+            <p class="msg__text">Compare these documents and draft a short brief. Flag anything I need to check.</p>
+          </div>
+          <div class="msg msg--ai">
+            <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
+            <div class="msg__body">
+              <p class="msg__text">The draft is ready. The notification terms differ, and the deletion deadline needs support.</p>
+              <a class="output-card" href="#draft" aria-label="Open Review brief, draft v3">
+                <span class="output-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-file-pen"/></svg></span>
+                <span>
+                  <span class="output-card__title">Review brief</span>
+                  <span class="output-card__meta">Draft v3 · 3 linked passages</span>
+                </span>
+                <span class="btn btn--sm btn--ghost">Open <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="composer">
+          <label class="sr-only" for="composer-input">Message</label>
+          <textarea id="composer-input" rows="2" placeholder="Ask, compare, or revise this draft…"></textarea>
+          <div class="composer__row">
+            <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
+            <a class="btn btn--send" href="states.html#example-reply" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <div class="col-head col-head--doc">
         <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
         <h2 id="draft-heading">Working document</h2>
         <span class="chip chip--count">Draft v3</span>
@@ -183,15 +205,14 @@
           </div>
           <div class="paper__body">
             <div class="doc">
-              <p class="kicker">Vendor review / 01</p>
               <h2>Obligations &amp; open questions</h2>
               <p class="prepared">Prepared from 3 source documents</p>
 
               <h3><span class="num">1</span>Incident notification</h3>
-              <p>The Service Agreement requires notice within 72 hours after the supplier confirms a security incident.<a class="cite has-tip" href="#e1" aria-label="Evidence E1, Service Agreement">E1<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E1</span><span class="status status--supported"><svg class="icon icon--xs"><use href="#i-circle-check"/></svg>Supports statement</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Service Agreement</span><span class="tip__meta">Page 4 · §8 · Source v2</span></span></span></a> The Security Addendum requires notice within 24 hours after the supplier discovers one.<a class="cite has-tip" href="#e2" aria-label="Evidence E2, Security Addendum">E2<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E2</span><span class="status status--supported"><svg class="icon icon--xs"><use href="#i-circle-check"/></svg>Supports statement</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Security Addendum</span><span class="tip__meta">Page 2 · §2 · Source v1</span></span></span></a> The periods and the triggering events differ. Neither document says which prevails.</p>
+              <p>Notice within 72 hours after the supplier confirms an incident.<a class="cite has-tip" href="#e1" aria-label="Evidence E1, Service Agreement">E1<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E1</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Service Agreement</span><span class="tip__meta">Page 4 · §8 · Source v2</span></span></span></a> Notice within 24 hours after the supplier discovers one.<a class="cite has-tip" href="#e2" aria-label="Evidence E2, Security Addendum">E2<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E2</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Security Addendum</span><span class="tip__meta">Page 2 · §2 · Source v1</span></span></span></a> The periods and the triggers differ. Neither document says which prevails.</p>
 
               <h3><span class="num">2</span>Data deletion</h3>
-              <p class="attention" id="deletion-statement">The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination.<a class="cite has-tip" href="#e3" aria-label="Evidence E3, Data Handling Schedule">E3<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E3</span><span class="status status--partial"><svg class="icon icon--xs"><use href="#i-circle-alert"/></svg>Partially supported</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a></p>
+              <p class="attention" id="deletion-statement">The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination.<a class="cite has-tip" href="#e3" aria-label="Evidence E3, Data Handling Schedule">E3<span class="tip" aria-hidden="true"><span class="tip__head"><span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a></p>
             </div>
           </div>
           <div class="paper__footer">
@@ -200,47 +221,6 @@
           </div>
         </article>
       </div>
-
-      <section class="chat" aria-labelledby="chat-heading">
-        <div class="chat__head">
-          <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
-          <h2 id="chat-heading">Conversation</h2>
-        </div>
-
-        <div class="msg msg--user">
-          <span class="msg__who" aria-hidden="true">MK</span>
-          <div class="msg__body">
-            <div class="msg__name">You</div>
-            <p class="msg__text">Compare these documents and draft a short brief. Flag anything I need to check.</p>
-          </div>
-        </div>
-
-        <div class="msg msg--ai">
-          <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
-          <div class="msg__body">
-            <div class="msg__name">Assistant</div>
-            <p class="msg__text">The draft is ready. The notification terms differ, and the deletion deadline needs support.</p>
-            <a class="output-card" href="#draft" aria-label="Open Review brief, draft v3">
-              <span class="output-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-file-pen"/></svg></span>
-              <span>
-                <span class="output-card__title">Review brief</span>
-                <span class="output-card__meta">Draft v3 · 3 linked passages</span>
-              </span>
-              <span class="btn btn--sm btn--ghost">Open <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></span>
-            </a>
-          </div>
-        </div>
-
-        <div class="composer">
-          <label class="sr-only" for="composer-input">Message</label>
-          <textarea id="composer-input" rows="2" placeholder="Ask, compare, or revise this draft…"></textarea>
-          <div class="composer__row">
-            <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
-            <a class="btn btn--primary" href="states.html#example-reply">Send <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
-          </div>
-        </div>
-        <p class="composer__note">Send opens an example reply.</p>
-      </section>
     </section>
 
     <!-- evidence -->
@@ -260,7 +240,7 @@
       <!-- E1 -->
       <section class="ev-panel" id="e1" aria-label="Evidence E1">
         <p class="ev-label">Statement in your draft</p>
-        <p class="ev-statement">The Service Agreement requires notice within 72 hours after the supplier confirms a security incident. <a class="cite is-selected" href="#e1">E1</a></p>
+        <p class="ev-statement">Notice within 72 hours after the supplier confirms an incident. <a class="cite is-selected" href="#e1">E1</a></p>
 
         <figure class="excerpt">
           <div class="excerpt__head"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt <span class="cite">E1</span></div>
@@ -270,24 +250,14 @@
               <a class="chip chip--source has-tip" href="states.html#source-preview"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Service Agreement<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Service Agreement</span><span class="tip__meta">PDF · v2 · 12 pages</span><span class="tip__meta">In context · Pinned</span></span></span></span></a>
               <span class="excerpt__loc">Page 4 · §8 · Source v2</span>
             </div>
-            <details>
-              <summary>Show surrounding text <svg class="icon icon--xs" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-              <p class="surround">§8 Security incidents. <span class="passage">The supplier must notify the customer within 72 hours after confirming a security incident.</span> The notice must describe the affected systems.</p>
-            </details>
           </div>
         </figure>
-
-        <div class="assessment">
-          <p class="ev-label">Automated assessment</p>
-          <span class="status status--supported"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Passage supports statement</span>
-          <p>States the 72-hour period and the confirmation trigger.</p>
-        </div>
       </section>
 
       <!-- E2 -->
       <section class="ev-panel" id="e2" aria-label="Evidence E2">
         <p class="ev-label">Statement in your draft</p>
-        <p class="ev-statement">The Security Addendum requires notice within 24 hours after the supplier discovers one. <a class="cite is-selected" href="#e2">E2</a></p>
+        <p class="ev-statement">Notice within 24 hours after the supplier discovers one. <a class="cite is-selected" href="#e2">E2</a></p>
 
         <figure class="excerpt">
           <div class="excerpt__head"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt <span class="cite">E2</span></div>
@@ -297,18 +267,8 @@
               <a class="chip chip--source has-tip" href="states.html#source-preview"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Security Addendum<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Security Addendum</span><span class="tip__meta">PDF · v1 · 4 pages</span><span class="tip__meta">In context</span></span></span></span></a>
               <span class="excerpt__loc">Page 2 · §2 · Source v1</span>
             </div>
-            <details>
-              <summary>Show surrounding text <svg class="icon icon--xs" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-              <p class="surround">§2 Incident notification. <span class="passage">The supplier must notify the customer within 24 hours after discovering a security incident.</span> Status updates follow until the incident is closed.</p>
-            </details>
           </div>
         </figure>
-
-        <div class="assessment">
-          <p class="ev-label">Automated assessment</p>
-          <span class="status status--supported"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Passage supports statement</span>
-          <p>States the 24-hour period and the discovery trigger.</p>
-        </div>
       </section>
 
       <!-- E3 (default selection) -->
@@ -324,32 +284,13 @@
               <a class="chip chip--source has-tip" href="states.html#source-preview"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Data Handling Schedule</span><span class="tip__meta">PDF · v1 · 3 pages</span><span class="tip__meta">In context · Selected · E3</span></span></span></span></a>
               <span class="excerpt__loc">Page 2 · §4 · Source v1</span>
             </div>
-            <details>
-              <summary>Show surrounding text <svg class="icon icon--xs" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
-              <p class="surround">§4 Retention and deletion. <span class="passage">The supplier must delete customer data following termination of the agreement.</span> Deletion is confirmed in writing on request.</p>
-            </details>
           </div>
         </figure>
-
-        <div class="assessment">
-          <p class="ev-label">Automated assessment</p>
-          <span class="status status--partial"><svg class="icon" aria-hidden="true"><use href="#i-circle-alert"/></svg>Partially supported</span>
-          <p>This passage requires deletion. It does not state a 30-day deadline.</p>
-        </div>
-
-        <div class="revision">
-          <p class="ev-label">Suggested revision</p>
-          <p>The supplier must delete customer data following termination. The cited passage does not specify a deadline.</p>
-          <div class="row">
-            <a class="btn btn--primary btn--sm" href="states.html#draft-v4">Apply to draft</a>
-          </div>
-        </div>
       </section>
     </aside>
 
   </div>
 </main>
 
-<footer class="site-footer">Design prototype · Fictional documents · Example states</footer>
 </body>
 </html>

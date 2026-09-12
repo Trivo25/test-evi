@@ -65,21 +65,13 @@
       <h1>Vendor agreement</h1>
       <p class="subtitle">Compare obligations. Build a reviewable brief.</p>
     </div>
-    <a class="btn" href="workflow.html"><svg class="icon" aria-hidden="true"><use href="#i-workflow"/></svg>Save as workflow</a>
   </div>
-  <nav class="nav" aria-label="Project views">
-    <a href="index.html">Workspace</a>
-    <a href="outputs.html">Outputs <span class="count">2</span></a>
-    <a href="workflow.html">Workflow</a>
-  </nav>
 </section>
 
 <main class="work-area" id="examples">
   <div class="page-intro">
     <h2>Example states</h2>
-    <p>Static examples of each action.</p>
     <nav class="toc" aria-label="Example index">
-      <a class="chip" href="#source-menu">Source menu</a>
       <a class="chip" href="#rename">Rename</a>
       <a class="chip" href="#replace">Replace</a>
       <a class="chip" href="#exclude">Exclude</a>
@@ -88,102 +80,30 @@
       <a class="chip" href="#source-preview">Source preview</a>
       <a class="chip" href="#edit">Edit paragraph</a>
       <a class="chip" href="#draft-v4">Draft v4</a>
-      <a class="chip" href="#recheck">Recheck</a>
       <a class="chip" href="#example-reply">Example reply</a>
       <a class="chip" href="#hover-card">Hover card</a>
-      <a class="chip" href="#statuses">Assessment statuses</a>
     </nav>
   </div>
 
   <div class="stack">
 
-    <!-- ===== source menu ===== -->
-    <section class="example" id="source-menu" aria-labelledby="h-source-menu">
-      <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-source-menu">Source menu open</h2></div>
-      <p class="example__lead">The menu opens above the next card.</p>
-      <div class="example__grid">
-        <ul class="source-list">
-          <li class="source-card">
-            <details class="card-menu" open>
-              <summary aria-label="Actions for Data Handling Schedule"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
-              <div class="menu">
-                <a href="#rename"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</a>
-                <a href="#replace"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</a>
-                <hr>
-                <a class="menu__danger" href="#remove"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trash"/></svg>Remove from project</a>
-              </div>
-            </details>
-            <div class="source-card__body">
-              <span class="thumb" role="img" aria-label="PDF file"></span>
-              <div>
-                <span class="source-card__name">Data Handling Schedule</span>
-                <div class="source-card__meta">v1 · 3 pages</div>
-              </div>
-            </div>
-            <div class="source-card__foot">
-              <label class="check"><input type="checkbox" checked> In context</label>
-              <a class="pin-btn" href="#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
-            </div>
-          </li>
-          <li class="source-card">
-            <div class="source-card__body">
-              <span class="thumb" role="img" aria-label="PDF file"></span>
-              <div>
-                <span class="source-card__name">Security Addendum</span>
-                <div class="source-card__meta">v1 · 4 pages</div>
-              </div>
-            </div>
-            <div class="source-card__foot">
-              <label class="check"><input type="checkbox" checked> In context</label>
-              <a class="pin-btn" href="#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
     <!-- ===== rename ===== -->
-    <section class="example" id="rename" aria-labelledby="h-rename">
-      <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-rename">Rename a source</h2></div>
-      <p class="example__lead">The preview opens a prepared name.</p>
-      <div class="example__grid">
+
+
+    <section class="example" id="rename" aria-labelledby="h-renamed">
+      <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-renamed">Rename</h2></div>
+      <p class="example__lead">The name changes in the card and the chip. E3 and Source v1 do not.</p>
+      <div class="example__grid--ev example__grid">
         <div>
-          <ul class="source-list">
-            <li class="source-card source-card--selected">
-              <div class="source-card__body">
-                <span class="thumb" role="img" aria-label="PDF file"></span>
-                <div>
-                  <span class="source-card__name">Data Handling Schedule</span>
-                  <div class="source-card__meta">v1 · 3 pages</div>
-                  <div class="source-card__tags"><span class="chip chip--source">Selected · E3</span></div>
-                </div>
-              </div>
-              <div class="source-card__foot">
-                <label class="check"><input type="checkbox" checked> In context</label>
-                <a class="pin-btn" href="#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
-              </div>
-            </li>
-          </ul>
-          <form class="card-form" action="#renamed">
+          <form class="card-form mb-10" action="#rename">
             <label for="rename-input">New name</label>
             <input id="rename-input" type="text" value="Data Handling Schedule (Annex B)">
             <div class="card-form__actions">
-              <a class="btn btn--primary btn--sm" href="#renamed">Preview renamed state</a>
-              <a class="btn btn--sm" href="#rename">Cancel</a>
+              <a class="btn btn--primary btn--sm" href="#rename">Rename</a>
+              <a class="btn btn--sm" href="index.html">Cancel</a>
             </div>
-            <p class="card-form__note">The typed value is not applied.</p>
+            <p class="card-form__note">Result below · typed value not applied</p>
           </form>
-        </div>
-        <div>
-        </div>
-      </div>
-    </section>
-
-    <section class="example" id="renamed" aria-labelledby="h-renamed">
-      <div class="example__head"><span class="ex-tag">Result</span><h2 id="h-renamed">Renamed state</h2></div>
-      <p class="example__lead">The name changed in the card and the chip. E3, page, section, and Source v1 did not.</p>
-      <div class="example__grid--ev example__grid">
-        <div>
           <ul class="source-list source-list--narrow">
             <li class="source-card source-card--selected">
               <div class="source-card__body">
@@ -200,11 +120,9 @@
               </div>
             </li>
           </ul>
-          <p class="arrow-note"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Renamed · E3 and v1 preserved</p>
-          <div class="example__links"><a class="btn btn--sm" href="index.html#e3">Back to workspace</a></div>
         </div>
         <div class="ev-static">
-          <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="index.html#e2">E2</a><a href="#renamed" aria-current="true">E3</a></nav>
+          <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="index.html#e2">E2</a><a href="#rename" aria-current="true">E3</a></nav>
           <section class="ev-panel">
             <p class="ev-label">Statement in your draft</p>
             <p class="ev-statement">The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination. <span class="cite is-selected">E3</span></p>
@@ -218,55 +136,17 @@
                 </div>
               </div>
             </figure>
-            <div class="assessment">
-              <p class="ev-label">Automated assessment</p>
-              <span class="status status--partial"><svg class="icon" aria-hidden="true"><use href="#i-circle-alert"/></svg>Partially supported</span>
-              <p>This passage requires deletion. It does not state a 30-day deadline.</p>
-            </div>
           </section>
         </div>
       </div>
     </section>
 
     <!-- ===== replace ===== -->
-    <section class="example" id="replace" aria-labelledby="h-replace">
-      <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-replace">Replace a source file</h2></div>
-      <p class="example__lead">The preview opens Data Handling Schedule v2.</p>
-      <div class="example__grid">
-        <div>
-          <ul class="source-list">
-            <li class="source-card">
-              <div class="source-card__body">
-                <span class="thumb" role="img" aria-label="PDF file"></span>
-                <div>
-                  <span class="source-card__name">Data Handling Schedule</span>
-                  <div class="source-card__meta">v1 · 3 pages</div>
-                </div>
-              </div>
-              <div class="source-card__foot">
-                <label class="check"><input type="checkbox" checked> In context</label>
-                <a class="pin-btn" href="#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
-              </div>
-            </li>
-          </ul>
-          <form class="card-form" action="#replaced">
-            <label for="replace-input">New file (PDF)</label>
-            <input id="replace-input" type="file" accept="application/pdf">
-            <div class="card-form__actions">
-              <a class="btn btn--primary btn--sm" href="#replaced">Preview replaced state</a>
-              <a class="btn btn--sm" href="#replace">Cancel</a>
-            </div>
-            <p class="card-form__note">No file is uploaded.</p>
-          </form>
-        </div>
-        <div>
-        </div>
-      </div>
-    </section>
 
-    <section class="example" id="replaced" aria-labelledby="h-replaced">
-      <div class="example__head"><span class="ex-tag">Result</span><h2 id="h-replaced">Replaced · Data Handling Schedule v2</h2></div>
-      <p class="example__lead">E3 still quotes v1 and needs a recheck. The current file is v2.</p>
+
+    <section class="example" id="replace" aria-labelledby="h-replaced">
+      <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-replaced">Replace file</h2></div>
+      <p class="example__lead">The file becomes v2. E3 still quotes v1 and needs a recheck.</p>
       <div class="example__grid--3 example__grid">
         <div>
           <div class="col-head"><svg class="icon" aria-hidden="true"><use href="#i-files"/></svg><h3>Sources</h3><span class="chip chip--count">3 in context</span></div>
@@ -286,6 +166,15 @@
               </div>
             </li>
           </ul>
+          <form class="card-form mt-8" action="#replace">
+            <label for="replace-input">New file (PDF)</label>
+            <input id="replace-input" type="file" accept="application/pdf">
+            <div class="card-form__actions">
+              <a class="btn btn--primary btn--sm" href="#replace">Replace</a>
+              <a class="btn btn--sm" href="index.html">Cancel</a>
+            </div>
+            <p class="card-form__note">Result shown · no file uploaded</p>
+          </form>
         </div>
 
         <div>
@@ -313,7 +202,7 @@
 
         <div class="ev-static">
           <div class="col-head"><svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg><h3>Evidence</h3><span class="chip chip--count">E3 selected</span></div>
-          <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="index.html#e2">E2</a><a href="#replaced" aria-current="true" class="is-stale">E3</a></nav>
+          <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="index.html#e2">E2</a><a href="#replace" aria-current="true" class="is-stale">E3</a></nav>
           <section class="ev-panel">
             <p class="ev-label">Statement in your draft</p>
             <p class="ev-statement">The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination. <span class="cite cite--stale">E3</span></p>
@@ -327,12 +216,6 @@
                 </div>
               </div>
             </figure>
-            <div class="assessment">
-              <p class="ev-label">Automated assessment</p>
-              <span class="status status--recheck"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>Source replaced · Needs recheck</span>
-              <p>The file changed from v1 to v2. The excerpt was taken from v1 and was not moved.</p>
-            </div>
-            <div class="ev-open"><a class="btn btn--sm" href="#recheck">Recheck against v2</a></div>
           </section>
         </div>
       </div>
@@ -396,11 +279,10 @@
               <div class="paper__toolbar"><svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg><span>Review brief</span><span class="badge-draft">DRAFT</span></div>
               <div class="paper__body">
                 <div class="doc">
-                  <p class="kicker">Vendor review / 01</p>
                   <h2>Obligations &amp; open questions</h2>
                   <p class="prepared">Prepared from 3 source documents · 2 currently in context</p>
                   <h3><span class="num">1</span>Incident notification</h3>
-                  <p>The Service Agreement requires notice within 72 hours after the supplier confirms a security incident.<span class="cite">E1</span> The Security Addendum requires notice within 24 hours after the supplier discovers one.<span class="cite cite--out" title="Outside current context">E2</span> The periods and the triggering events differ.</p>
+                  <p>Notice within 72 hours after the supplier confirms an incident.<span class="cite">E1</span> Notice within 24 hours after the supplier discovers one.<span class="cite cite--out" title="Outside current context">E2</span> The periods and the triggers differ.</p>
                   <p class="stale-note"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-alert"/></svg>E2 is outside the current context.</p>
                 </div>
               </div>
@@ -417,7 +299,7 @@
           <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="#exclude" aria-current="true" class="is-stale">E2</a><a href="index.html#e3">E3</a></nav>
           <section class="ev-panel">
             <p class="ev-label">Statement in your draft</p>
-            <p class="ev-statement">The Security Addendum requires notice within 24 hours after the supplier discovers one. <span class="cite cite--out">E2</span></p>
+            <p class="ev-statement">Notice within 24 hours after the supplier discovers one. <span class="cite cite--out">E2</span></p>
             <figure class="excerpt">
               <div class="excerpt__head"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt <span class="cite">E2</span></div>
               <div class="excerpt__body">
@@ -428,36 +310,7 @@
                 </div>
               </div>
             </figure>
-            <div class="assessment">
-              <p class="ev-label">Automated assessment</p>
-              <span class="status status--out"><svg class="icon" aria-hidden="true"><use href="#i-circle-x"/></svg>Outside current context</span>
-              <p>The excerpt is kept. The source is not available to new tasks.</p>
-            </div>
           </section>
-        </div>
-      </div>
-
-      <div class="two-col mt-18">
-        <div>
-          <p class="ev-label">Excluding a pinned source clears the pin</p>
-          <ul class="source-list source-list--narrow">
-            <li class="source-card source-card--excluded">
-              <div class="source-card__body">
-                <span class="thumb" role="img" aria-label="PDF file"></span>
-                <div>
-                  <span class="source-card__name">Service Agreement</span>
-                  <div class="source-card__meta">v2 · 12 pages</div>
-                  <div class="source-card__tags"><span class="chip chip--excluded"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-circle-x"/></svg>Excluded</span><span class="chip">Pin cleared</span></div>
-                </div>
-              </div>
-              <div class="source-card__foot">
-                <label class="check"><input type="checkbox"> In context</label>
-                <a class="pin-btn" href="#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div>
         </div>
       </div>
     </section>
@@ -465,10 +318,9 @@
     <!-- ===== pin ===== -->
     <section class="example" id="pin" aria-labelledby="h-pin">
       <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-pin">Pin and unpin</h2></div>
-      <p class="example__lead">Pinning keeps a source in context. Unpinning leaves it included.</p>
+      <p class="example__lead">Pinning keeps a source in context. Unpinning leaves it in context.</p>
       <div class="two-col">
         <div>
-          <p class="ev-label">Pin · Security Addendum</p>
           <ul class="source-list source-list--narrow">
             <li class="source-card">
               <div class="source-card__body">
@@ -484,26 +336,7 @@
               </div>
             </li>
           </ul>
-          <p class="arrow-note"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Pinned · 3 in context</p>
-        </div>
-        <div>
-          <p class="ev-label">Unpin · Service Agreement</p>
-          <ul class="source-list source-list--narrow">
-            <li class="source-card">
-              <div class="source-card__body">
-                <span class="thumb" role="img" aria-label="PDF file"></span>
-                <div>
-                  <span class="source-card__name">Service Agreement</span>
-                  <div class="source-card__meta">v2 · 12 pages</div>
-                </div>
-              </div>
-              <div class="source-card__foot">
-                <label class="check"><input type="checkbox" checked> In context</label>
-                <a class="pin-btn" href="#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
-              </div>
-            </li>
-          </ul>
-          <p class="arrow-note"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Unpinned · still in context</p>
+          <p class="arrow-note"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg>Pinned · still 3 in context</p>
         </div>
       </div>
     </section>
@@ -565,11 +398,10 @@
               <div class="paper__toolbar"><svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg><span>Review brief</span><span class="badge-draft">DRAFT</span></div>
               <div class="paper__body">
                 <div class="doc">
-                  <p class="kicker">Vendor review / 01</p>
                   <h2>Obligations &amp; open questions</h2>
                   <p class="prepared">Prepared from 3 source documents · 2 currently in project</p>
                   <h3><span class="num">1</span>Incident notification</h3>
-                  <p>The Service Agreement requires notice within 72 hours after the supplier confirms a security incident.<span class="cite">E1</span> The Security Addendum requires notice within 24 hours after the supplier discovers one.<span class="cite cite--removed" title="Source removed">E2</span></p>
+                  <p>Notice within 72 hours after the supplier confirms an incident.<span class="cite">E1</span> Notice within 24 hours after the supplier discovers one.<span class="cite cite--removed" title="Source removed">E2</span></p>
                   <p class="stale-note"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-alert"/></svg>E2 cites a removed source.</p>
                 </div>
               </div>
@@ -586,7 +418,7 @@
           <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="#remove" aria-current="true" class="is-stale">E2</a><a href="index.html#e3">E3</a></nav>
           <section class="ev-panel">
             <p class="ev-label">Statement in your draft</p>
-            <p class="ev-statement">The Security Addendum requires notice within 24 hours after the supplier discovers one. <span class="cite cite--removed">E2</span></p>
+            <p class="ev-statement">Notice within 24 hours after the supplier discovers one. <span class="cite cite--removed">E2</span></p>
             <figure class="excerpt excerpt--removed">
               <div class="excerpt__head"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt · historical <span class="cite">E2</span></div>
               <div class="excerpt__body">
@@ -597,11 +429,6 @@
                 </div>
               </div>
             </figure>
-            <div class="assessment">
-              <p class="ev-label">Automated assessment</p>
-              <span class="status status--removed"><svg class="icon" aria-hidden="true"><use href="#i-circle-x"/></svg>Source removed</span>
-              <p>The file is no longer in the project. The quotation is kept as history.</p>
-            </div>
             <div class="ev-open"><a class="btn btn--sm" href="index.html"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-undo"/></svg>Undo removal</a></div>
           </section>
         </div>
@@ -612,7 +439,7 @@
     <section class="example" id="source-preview" aria-labelledby="h-source-preview">
       <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-source-preview">Open a source in the center pane</h2></div>
       <p class="example__lead">The center pane shows the cited page. The draft version and the source version stay separate.</p>
-      <div class="example__grid--3 example__grid">
+      <div class="example__grid">
         <div>
           <div class="col-head"><svg class="icon" aria-hidden="true"><use href="#i-files"/></svg><h3>Sources</h3><span class="chip chip--count">3 in context</span></div>
           <ul class="source-list">
@@ -655,16 +482,6 @@
             </article>
           </div>
         </div>
-
-        <div class="ev-static">
-          <div class="col-head"><svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg><h3>Evidence</h3><span class="chip chip--count">E3 selected</span></div>
-          <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="index.html#e2">E2</a><a href="#source-preview" aria-current="true">E3</a></nav>
-          <section class="ev-panel">
-            <p class="ev-label">Citation check</p>
-            <span class="status status--supported"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Citation opens the correct passage</span>
-            <p class="assessment mt-8"><span class="muted small">Support and human review are separate checks.</span></p>
-          </section>
-        </div>
       </div>
     </section>
 
@@ -680,7 +497,6 @@
               <div class="paper__toolbar"><svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg><span>Review brief</span><span class="badge-draft">DRAFT</span><span class="spacer"></span><span class="small muted">Editing section 2</span></div>
               <div class="paper__body">
                 <div class="doc">
-                  <p class="kicker">Vendor review / 01</p>
                   <h2>Obligations &amp; open questions</h2>
                   <p class="prepared">Prepared from 3 source documents</p>
                   <h3><span class="num">2</span>Data deletion</h3>
@@ -719,11 +535,10 @@
               <div class="paper__toolbar"><svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg><span>Review brief</span><span class="badge-draft badge-draft--changed">DRAFT · CHANGED</span><span class="spacer"></span><a class="btn btn--sm" href="#edit"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit paragraph</a></div>
               <div class="paper__body">
                 <div class="doc">
-                  <p class="kicker">Vendor review / 01</p>
                   <h2>Obligations &amp; open questions</h2>
                   <p class="prepared">Prepared from 3 source documents</p>
                   <h3><span class="num">1</span>Incident notification</h3>
-                  <p>The Service Agreement requires notice within 72 hours after the supplier confirms a security incident.<span class="cite">E1</span> The Security Addendum requires notice within 24 hours after the supplier discovers one.<span class="cite">E2</span> The periods and the triggering events differ. Neither document says which prevails.</p>
+                  <p>Notice within 72 hours after the supplier confirms an incident.<span class="cite">E1</span> Notice within 24 hours after the supplier discovers one.<span class="cite">E2</span> The periods and the triggers differ. Neither document says which prevails.</p>
                   <h3><span class="num">2</span>Data deletion</h3>
                   <p><span class="revised">The supplier must delete customer data following termination. The cited passage does not specify a deadline.</span><span class="cite cite--stale">E3</span></p>
                   <p class="stale-note"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg>Statement changed. E3 needs recheck.</p>
@@ -752,65 +567,6 @@
                 </div>
               </div>
             </figure>
-            <div class="assessment">
-              <p class="ev-label">Automated assessment</p>
-              <span class="status status--recheck"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>Draft changed · Needs recheck</span>
-              <p>The statement changed after the last check.</p>
-            </div>
-            <div class="ev-open"><a class="btn btn--primary btn--sm" href="#recheck">Run recheck</a></div>
-          </section>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== recheck ===== -->
-    <section class="example" id="recheck" aria-labelledby="h-recheck">
-      <div class="example__head"><span class="ex-tag">Result</span><h2 id="h-recheck">Recheck · draft v4</h2></div>
-      <p class="example__lead">The same v1 passage supports the revised statement. Human review is still pending.</p>
-      <div class="example__grid--ev example__grid">
-        <div>
-          <div class="col-head"><svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg><h3>Working document</h3><span class="chip chip--count">Draft v4</span></div>
-          <div class="paper-wrap">
-            <article class="paper" aria-label="Review brief, draft v4, rechecked">
-              <div class="paper__toolbar"><svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg><span>Review brief</span><span class="badge-draft">DRAFT</span><span class="spacer"></span><a class="btn btn--sm" href="#edit"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit paragraph</a></div>
-              <div class="paper__body">
-                <div class="doc">
-                  <p class="kicker">Vendor review / 01</p>
-                  <h2>Obligations &amp; open questions</h2>
-                  <p class="prepared">Prepared from 3 source documents</p>
-                  <h3><span class="num">2</span>Data deletion</h3>
-                  <p>The supplier must delete customer data following termination. The cited passage does not specify a deadline.<span class="cite is-selected">E3</span></p>
-                </div>
-              </div>
-              <div class="paper__footer">
-                <span><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>3 linked passages</span>
-                <span><svg class="icon" aria-hidden="true"><use href="#i-circle-dashed"/></svg>Human review pending</span>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="ev-static">
-          <div class="col-head"><svg class="icon" aria-hidden="true"><use href="#i-quote"/></svg><h3>Evidence</h3><span class="chip chip--count">E3 selected</span></div>
-          <nav class="ev-tabs" aria-label="Evidence selectors"><a href="index.html#e1">E1</a><a href="index.html#e2">E2</a><a href="#recheck" aria-current="true">E3</a></nav>
-          <section class="ev-panel">
-            <p class="ev-label">Statement in your draft</p>
-            <p class="ev-statement">The supplier must delete customer data following termination. The cited passage does not specify a deadline. <span class="cite is-selected">E3</span></p>
-            <figure class="excerpt">
-              <div class="excerpt__head"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt <span class="cite">E3</span></div>
-              <div class="excerpt__body">
-                <blockquote>The supplier must <mark>delete customer data following termination</mark> of the agreement.</blockquote>
-                <div class="excerpt__src">
-                  <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule</span>
-                  <span class="excerpt__loc">Page 2 · §4 · Source v1</span>
-                </div>
-              </div>
-            </figure>
-            <div class="assessment">
-              <p class="ev-label">Automated assessment</p>
-              <span class="status status--supported"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Passage supports statement</span>
-              <p>The statement claims deletion with no stated deadline. The passage says the same.</p>
-            </div>
-            <div class="ev-open"><span class="status status--pending"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-dashed"/></svg>Human review pending</span></div>
           </section>
         </div>
       </div>
@@ -821,21 +577,17 @@
       <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-example-reply">Example reply</h2></div>
       <p class="example__lead">Send shows this prepared exchange.</p>
       <div class="example__grid--ev example__grid">
-        <section class="chat mt-0" aria-label="Conversation, example reply">
-          <div class="chat__head"><svg class="icon" aria-hidden="true"><use href="#i-message"/></svg><h2>Conversation</h2></div>
-
-          <div class="msg msg--user">
-            <span class="msg__who" aria-hidden="true">MK</span>
-            <div class="msg__body">
-              <div class="msg__name">You</div>
+        <section class="chat mt-0" aria-label="Chat, example reply">
+          <div class="chat__thread">
+            <div class="msg msg--user">
               <p class="msg__text muted">Your message is not read by this prototype.</p>
             </div>
-          </div>
-          <div class="msg msg--ai msg--example">
-            <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
-            <div class="msg__body">
-              <div class="msg__name">Assistant · example</div>
-              <p class="msg__text">Example reply. No request was processed. A real reply would answer and attach any changed draft.</p>
+            <div class="msg msg--ai">
+              <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
+              <div class="msg__body">
+                <div class="msg__name">Example reply</div>
+                <p class="msg__text">No request was processed. A real reply would answer and attach any changed draft.</p>
+              </div>
             </div>
           </div>
           <div class="composer">
@@ -843,10 +595,9 @@
             <textarea id="composer-input-2" rows="2" placeholder="Ask, compare, or revise this draft…"></textarea>
             <div class="composer__row">
               <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
-              <a class="btn btn--primary" href="#example-reply">Send <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+              <a class="btn btn--send" href="#example-reply" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
             </div>
           </div>
-          <div class="example__links"><a class="btn btn--sm" href="index.html">Back to workspace</a></div>
         </section>
         <div>
         </div>
@@ -860,7 +611,7 @@
       <div class="two-col">
         <div>
           <p class="ev-label">Citation card</p>
-          <div class="doc"><p>The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination.<a class="cite" href="index.html#e3" aria-label="Evidence E3, Data Handling Schedule">E3</a></p><span class="tip tip--open" aria-hidden="true"><span class="tip__head"><span class="cite">E3</span><span class="status status--partial"><svg class="icon icon--xs"><use href="#i-circle-alert"/></svg>Partially supported</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></div>
+          <div class="doc"><p>The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination.<a class="cite" href="index.html#e3" aria-label="Evidence E3, Data Handling Schedule">E3</a></p><span class="tip tip--open" aria-hidden="true"><span class="tip__head"><span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></div>
         </div>
         <div>
           <p class="ev-label">Source chip card</p>
@@ -869,28 +620,8 @@
       </div>
     </section>
 
-    <!-- ===== statuses ===== -->
-    <section class="example" id="statuses" aria-labelledby="h-statuses">
-      <div class="example__head"><span class="ex-tag">Reference</span><h2 id="h-statuses">Assessment statuses</h2></div>
-      <p class="example__lead">Each status pairs an icon with a label. No confidence scores.</p>
-      <div class="two-col">
-        <ul class="checks">
-          <li><span class="status status--supported"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Passage supports statement</span></li>
-          <li><span class="status status--partial"><svg class="icon" aria-hidden="true"><use href="#i-circle-alert"/></svg>Partially supported</span></li>
-          <li><span class="status status--manual"><svg class="icon" aria-hidden="true"><use href="#i-circle-help"/></svg>Needs manual verification</span></li>
-        </ul>
-        <ul class="checks">
-          <li><span class="status status--recheck"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>Draft changed · Needs recheck</span></li>
-          <li><span class="status status--recheck"><svg class="icon" aria-hidden="true"><use href="#i-refresh"/></svg>Source replaced · Needs recheck</span></li>
-          <li><span class="status status--removed"><svg class="icon" aria-hidden="true"><use href="#i-circle-x"/></svg>Source removed</span></li>
-          <li><span class="status status--pending"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-dashed"/></svg>Human review pending</span></li>
-        </ul>
-      </div>
-    </section>
-
   </div>
 </main>
 
-<footer class="site-footer">Design prototype · Fictional documents · Example states</footer>
 </body>
 </html>
