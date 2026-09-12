@@ -1,62 +1,48 @@
 # Evidence workspace prototype
 
-A static HTML and CSS prototype of the document workspace. It shows three objects: the source document, the evidence excerpt, and the working draft. Chat stays visible as the place where the user requests work.
+Static HTML and CSS. Three objects: source document, evidence excerpt, working draft. Chat is where the user requests work.
 
-## Open the prototype
+## Open
 
-Open `index.html` in a browser. No server, build step, or network access is needed. Every page links to the others.
+Open `index.html` in a browser. No server or build step.
 
 | File | Content |
 | --- | --- |
-| `index.html` | The populated workspace. Draft v3, three sources, the conversation, and evidence E3 selected. |
-| `outputs.html` | The review brief and the requirements comparison, with a recheck example. |
-| `workflow.html` | The saved workflow `Agreement comparison` and a `Prepare new project` example. |
-| `states.html` | Labeled examples of source management, editing, and review states. |
-| `styles.css` | Design tokens, components, and responsive layout. |
-| `assets/icons.svg` | The local icon sprite (Lucide-style line icons). The same sprite is inlined at the top of each page so `<use>` works from `file://` in every browser. |
+| `index.html` | Workspace: three sources, draft v3, conversation, evidence E3 selected. |
+| `outputs.html` | Review brief and requirements comparison. |
+| `workflow.html` | Saved workflow `Agreement comparison` and an empty new project. |
+| `states.html` | Labeled examples of each action and state. |
+| `styles.css` | Tokens, components, responsive layout. |
+| `assets/icons.svg` | Local icon sprite, also inlined in each page so it works from `file://`. |
 
-The prototype uses Inter with Arial and sans-serif fallbacks, and Georgia with a serif fallback. No font files are shipped. If Inter is not installed, the browser uses Arial.
+Fonts: Inter with Arial fallback, Georgia with serif fallback. No font files shipped.
 
 ## What works without JavaScript
 
-The pages contain no JavaScript. These interactions are native HTML or CSS only:
+- **Evidence selection.** `E1`, `E2`, `E3` and inline citations link to `#e1`, `#e2`, `#e3`. CSS `:target` and `:has()` switch the panel, the citation, and the source card. Default is E3. `:has()` needs Chrome 105+, Safari 15.4+, or Firefox 121+.
+- **Hover cards.** Hovering or focusing a citation or source chip shows the quotation, source, page, section, version, and status. Below 900px the card is fixed to the bottom of the screen. Hidden from assistive technology; the evidence panel carries the same content.
+- **Menus, disclosures, forms.** Native `<details>`, `<input>`, `<textarea>`.
 
-- **Evidence selection on the workspace.** `E1`, `E2`, `E3` and the inline citations are links to `#e1`, `#e2`, `#e3`. CSS `:target` and `:has()` show the matching panel, mark the selector, the citation, and the source card. Without a fragment, E3 is selected.
-- **Source menus, surrounding text, and forms.** These use `<details>`, `<summary>`, `<input>`, and `<textarea>`.
-- **Navigation.** Links move between pages and named example states.
-- **Hover cards.** Pointing at a citation (`E1`, `E2`, `E3`) or a source chip, or focusing it with the keyboard, shows a condensed card with the quotation, source chip, page, section, source version, and assessment. The card is CSS only and hidden from assistive technology; the full evidence panel carries the same information. On screens 900px and narrower the card is fixed to the bottom of the screen. Touch devices do not hover, so a tap opens the evidence panel directly. `states.html#hover-card` shows both cards open for inspection.
+## Static demonstrations
 
-`:has()` needs a browser from 2023 or later (Chrome 105+, Safari 15.4+, Firefox 121+). In an older browser the E3 panel still shows by default, but selecting E1 or E2 does not update the citation and source card styling.
+Typed input is never applied. These actions open a prepared example instead:
 
-## Actions that are static demonstrations
-
-A static page cannot apply typed input or process a chat request. Each of these actions opens a prepared, labeled example instead:
-
-| Action | What happens in the prototype |
+| Action | Opens |
 | --- | --- |
-| Rename | The form shows a prepared name. `Preview renamed state` opens `states.html#renamed`. The typed value is not applied. |
-| Replace file | The file input does nothing. `Preview replaced state` opens `states.html#replaced` with Data Handling Schedule v2. |
-| Exclude, Pin, Remove, Undo | Checkboxes toggle visually but do not change counts. The examples in `states.html` show the resulting states. `Undo removal` returns to the workspace. |
-| Open a source | Opens `states.html#source-preview`, which shows the source page in the center pane with `Back to draft`. |
-| Edit paragraph | Opens `states.html#edit`. The text area is editable but nothing is saved. `Save as draft v4 (example)` opens the prepared v4 state. |
-| Apply to draft | Opens `states.html#draft-v4`, then `Run recheck (example)` opens `states.html#recheck`. |
-| Send | Opens `states.html#example-reply`. The reply is labeled as an example. Typed text is not read. |
-| Save as workflow | Opens `workflow.html`. |
-| Add file, Start project | Static links inside the `Prepare new project` example. |
+| Rename, Replace file | `states.html#renamed`, `states.html#replaced` |
+| Exclude, Pin, Remove, Undo | `states.html#exclude`, `#pin`, `#remove`; Undo returns to the workspace |
+| Open a source | `states.html#source-preview` |
+| Edit paragraph, Apply to draft | `states.html#edit`, then `#draft-v4`, then `#recheck` |
+| Send | `states.html#example-reply` |
+| Add file, Start project | Static links in the new-project example |
 
-No live AI call, PDF processing, authentication, or storage exists in this prototype.
+No AI call, PDF processing, authentication, or storage.
 
 ## Verification
 
-Checked with headless Chrome (macOS) at 1024px, 736px, 360px, and 320px on all four pages:
-
-- No horizontal page overflow. Comparison tables scroll inside their own container on narrow screens.
-- Three columns above 900px, evidence below the center pane at 900px and below, one column at 620px and below.
-- Long source names wrap inside their cards. Source menus open above adjacent cards.
-- Touch targets are at least 44px high at 620px and below. Text inputs use 16px text at that width.
+Headless Chrome on macOS at 1024, 736, 360, and 320px on all pages: no horizontal overflow, tables scroll in their own container, three columns above 900px, one column at 620px and below, 44px targets and 16px inputs on narrow screens.
 
 Not verified:
 
-- **`reference-fragment.html` was not present in the repository.** The brief refers to it as the primary visual reference. The implementation follows the brief's written specification and the earlier `index.html` and `styles.css` that were in the repository. Composition fidelity to the reference fragment could not be compared.
-- Safari and Firefox rendering were not tested. Only Chrome was available.
-- Screen reader behavior was not tested. Accessible names, labels, focus styles, and reading order are present in the markup.
+- `reference-fragment.html` was not in the repository. The build follows the written brief only.
+- Safari, Firefox, and screen readers were not tested.

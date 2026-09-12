@@ -75,9 +75,6 @@
 </section>
 
 <main class="work-area" id="workflow">
-  <div class="page-intro">
-    <p>A saved workflow keeps the instructions, the required inputs, the output structure, and the review criteria. It does not keep documents, excerpts, or facts from this vendor.</p>
-  </div>
 
   <div class="stack">
     <div class="two-col">
@@ -88,31 +85,28 @@
           <span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span>
           <div>
             <h2 id="wf-heading">Agreement comparison</h2>
-            <p class="muted">Saved workflow · from Vendor agreement · no documents carried over</p>
+            <p class="muted">Saved from Vendor agreement</p>
           </div>
         </div>
 
         <div class="wf-section">
           <h3><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Instructions</h3>
-          <p>Compare the obligations in the agreement with its addenda and supporting schedules. Keep exact deadlines and triggering events. Quote each obligation from a specific source version. Flag missing information as an open question. Do not decide which document prevails.</p>
+          <p>Compare obligations across the agreement, addenda, and schedules. Keep exact deadlines and triggering events. Flag missing information. Do not decide which document prevails.</p>
         </div>
 
         <div class="wf-section">
           <h3><svg class="icon icon--sm" aria-hidden="true"><use href="#i-files"/></svg>Required inputs</h3>
           <div class="slot">
             <span class="thumb thumb--empty" aria-hidden="true"></span>
-            <div><div class="slot__name">Agreement</div><div class="slot__hint">Required · 1 file · the main contract</div></div>
-            <span class="chip chip--count">1</span>
+            <div><div class="slot__name">Agreement</div><div class="slot__hint">Required · 1 file</div></div>
           </div>
           <div class="slot">
             <span class="thumb thumb--empty" aria-hidden="true"></span>
-            <div><div class="slot__name">Addenda</div><div class="slot__hint">Optional · any number · security, service level, or data addenda</div></div>
-            <span class="chip chip--count">0 or more</span>
+            <div><div class="slot__name">Addenda</div><div class="slot__hint">Optional</div></div>
           </div>
           <div class="slot">
             <span class="thumb thumb--empty" aria-hidden="true"></span>
-            <div><div class="slot__name">Supporting schedules</div><div class="slot__hint">Optional · any number · data handling, retention, sub-processor lists</div></div>
-            <span class="chip chip--count">0 or more</span>
+            <div><div class="slot__name">Supporting schedules</div><div class="slot__hint">Optional</div></div>
           </div>
         </div>
 
@@ -121,11 +115,11 @@
           <ul class="out-list">
             <li>
               <span class="output-card__icon" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-table"/></svg></span>
-              <div><div class="output-card__title">Requirements comparison</div><div class="output-card__meta">One row per obligation. One column per source. Every cell cites an evidence identifier or states “Not addressed”.</div></div>
+              <div><div class="output-card__title">Requirements comparison</div><div class="output-card__meta">One row per obligation, one column per source, every cell cited.</div></div>
             </li>
             <li>
               <span class="output-card__icon" aria-hidden="true"><svg class="icon icon--sm"><use href="#i-file-pen"/></svg></span>
-              <div><div class="output-card__title">Review brief</div><div class="output-card__meta">Numbered sections, one per obligation. Each statement carries an inline citation. Open questions are listed, not resolved.</div></div>
+              <div><div class="output-card__title">Review brief</div><div class="output-card__meta">Numbered obligations with inline citations. Open questions listed, not resolved.</div></div>
             </li>
           </ul>
         </div>
@@ -133,20 +127,18 @@
         <div class="wf-section">
           <h3><svg class="icon icon--sm" aria-hidden="true"><use href="#i-list-checks"/></svg>Review criteria</h3>
           <ul class="checks">
-            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-check"/></svg><span><strong>Deadline support.</strong> Every deadline in an output is stated in its cited passage. A deadline without a passage is flagged.</span></li>
-            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-check"/></svg><span><strong>Distinct triggering events.</strong> Events such as discovery and confirmation are quoted exactly and never merged.</span></li>
-            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-check"/></svg><span><strong>Missing or conflicting information.</strong> Gaps and conflicts between sources are listed as open questions. The output does not choose which source prevails.</span></li>
-            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-dashed"/></svg><span><strong>Human review.</strong> Every output stays “Human review pending” until a person approves it. Automated checks never grant approval.</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-check"/></svg><span>Every deadline is stated in its cited passage.</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-check"/></svg><span>Triggering events are quoted exactly and kept distinct.</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-check"/></svg><span>Missing or conflicting information is listed as an open question.</span></li>
+            <li><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-dashed"/></svg><span>A person approves every output. Checks never grant approval.</span></li>
           </ul>
         </div>
 
         <div class="wf-section">
           <h3><svg class="icon icon--sm" aria-hidden="true"><use href="#i-history"/></svg>Kept from this project</h3>
           <dl>
-            <div class="wf-field"><dt>Instructions</dt><dd>Kept, including the saved correction: “discovery” and “confirmation” are different triggers.</dd></div>
-            <div class="wf-field"><dt>Source slots</dt><dd>Kept as empty slots by type.</dd></div>
-            <div class="wf-field"><dt>Documents</dt><dd><span class="chip chip--excluded"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-circle-x"/></svg>Not kept</span> Service Agreement, Security Addendum, Data Handling Schedule stay in this project only.</dd></div>
-            <div class="wf-field"><dt>Excerpts and facts</dt><dd><span class="chip chip--excluded"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-circle-x"/></svg>Not kept</span> E1 to E3, 72 hours, 24 hours, and the deletion wording are not carried into a new project.</dd></div>
+            <div class="wf-field"><dt>Kept</dt><dd>Instructions, the saved correction, empty source slots.</dd></div>
+            <div class="wf-field"><dt>Not kept</dt><dd><span class="chip chip--excluded"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-circle-x"/></svg>Documents · excerpts · facts</span></dd></div>
           </dl>
         </div>
       </section>
@@ -154,14 +146,14 @@
       <!-- prepare new project example -->
       <section class="example" id="prepare" aria-labelledby="prepare-heading">
         <div class="example__head"><span class="ex-tag">Example</span><h2 id="prepare-heading">Prepare new project</h2></div>
-        <p class="example__lead">A new project created from the workflow starts with empty source slots, no evidence, and no outputs. File selection and Start are static in this prototype.</p>
+        <p class="example__lead">A new project from this workflow starts empty.</p>
 
         <div class="wf-card">
           <div class="wf-card__head">
             <span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span>
             <div>
               <h3>Agreement comparison</h3>
-              <p class="muted">New project · 0 sources in context</p>
+              <p class="muted">New project · 0 sources</p>
             </div>
           </div>
 
@@ -174,17 +166,17 @@
             <h4><svg class="icon icon--sm" aria-hidden="true"><use href="#i-files"/></svg>Sources · 0 in context</h4>
             <div class="slot">
               <span class="thumb thumb--empty" aria-hidden="true"></span>
-              <div><div class="slot__name">Agreement</div><div class="slot__hint">Required · no file yet</div></div>
+              <div><div class="slot__name">Agreement</div><div class="slot__hint">Required</div></div>
               <a class="btn btn--sm" href="#prepare"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plus"/></svg>Add file</a>
             </div>
             <div class="slot">
               <span class="thumb thumb--empty" aria-hidden="true"></span>
-              <div><div class="slot__name">Addenda</div><div class="slot__hint">Optional · no files yet</div></div>
+              <div><div class="slot__name">Addenda</div><div class="slot__hint">Optional</div></div>
               <a class="btn btn--sm" href="#prepare"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plus"/></svg>Add file</a>
             </div>
             <div class="slot">
               <span class="thumb thumb--empty" aria-hidden="true"></span>
-              <div><div class="slot__name">Supporting schedules</div><div class="slot__hint">Optional · no files yet</div></div>
+              <div><div class="slot__name">Supporting schedules</div><div class="slot__hint">Optional</div></div>
               <a class="btn btn--sm" href="#prepare"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plus"/></svg>Add file</a>
             </div>
           </div>
@@ -197,15 +189,10 @@
             </ul>
           </div>
 
-          <div class="wf-section">
-            <h4><svg class="icon icon--sm" aria-hidden="true"><use href="#i-quote"/></svg>Evidence</h4>
-            <p class="muted small">No excerpts. Evidence identifiers start again at E1 in the new project.</p>
-          </div>
 
           <div class="wf-section wf-section--actions">
             <a class="btn btn--primary" href="#prepare">Start project</a>
             <a class="btn" href="index.html">Back to Vendor agreement</a>
-            <span class="small muted">Static example · no project is created</span>
           </div>
         </div>
       </section>
