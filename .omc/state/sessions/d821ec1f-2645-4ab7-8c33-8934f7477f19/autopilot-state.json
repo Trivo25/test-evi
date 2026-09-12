@@ -1,0 +1,12 @@
+{
+  "active": false,
+  "current_phase": "complete",
+  "task_description": "Hover cards on citations and source chips (completed directly; single focused change)",
+  "completed_at": "2026-09-12T10:05:00Z",
+  "_meta": {
+    "mode": "autopilot",
+    "sessionId": "d821ec1f-2645-4ab7-8c33-8934f7477f19",
+    "updatedAt": "2026-09-12T09:54:43.113Z",
+    "updatedBy": "state_write_tool"
+  }
+}

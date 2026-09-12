@@ -24,6 +24,7 @@ The pages contain no JavaScript. These interactions are native HTML or CSS only:
 - **Evidence selection on the workspace.** `E1`, `E2`, `E3` and the inline citations are links to `#e1`, `#e2`, `#e3`. CSS `:target` and `:has()` show the matching panel, mark the selector, the citation, and the source card. Without a fragment, E3 is selected.
 - **Source menus, surrounding text, and forms.** These use `<details>`, `<summary>`, `<input>`, and `<textarea>`.
 - **Navigation.** Links move between pages and named example states.
+- **Hover cards.** Pointing at a citation (`E1`, `E2`, `E3`) or a source chip, or focusing it with the keyboard, shows a condensed card with the quotation, source chip, page, section, source version, and assessment. The card is CSS only and hidden from assistive technology; the full evidence panel carries the same information. On screens 900px and narrower the card is fixed to the bottom of the screen. Touch devices do not hover, so a tap opens the evidence panel directly. `states.html#hover-card` shows both cards open for inspection.
 
 `:has()` needs a browser from 2023 or later (Chrome 105+, Safari 15.4+, Firefox 121+). In an older browser the E3 panel still shows by default, but selecting E1 or E2 does not update the citation and source card styling.
 

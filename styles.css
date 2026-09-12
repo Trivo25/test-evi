@@ -504,6 +504,38 @@ p .cite { margin-left: 4px; }
 .text-input { display: block; width: 100%; min-height: 32px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; background: #fff; font-size: 13px; }
 .wf-section--actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 
+/* hover cards on citations and source chips (css only, also on keyboard focus) */
+.has-tip { position: relative; }
+.tip {
+  position: absolute; left: 50%; bottom: calc(100% + 6px); z-index: 60;
+  display: block; width: max-content; max-width: 280px; padding: 10px 11px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  box-shadow: var(--shadow-menu);
+  font: 400 12px/1.5 var(--font-ui); color: var(--text); text-align: left; white-space: normal;
+  opacity: 0; visibility: hidden; transform: translate(-50%, 2px); pointer-events: none;
+  transition: opacity .12s ease, transform .12s ease, visibility 0s linear .12s;
+}
+.has-tip:hover > .tip, .has-tip:focus-visible > .tip {
+  opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: .15s, .15s, 0s;
+}
+.tip--right { left: auto; right: 0; transform: translateY(2px); }
+.has-tip:hover > .tip--right, .has-tip:focus-visible > .tip--right { transform: none; }
+.tip--open { position: static; opacity: 1; visibility: visible; transform: none; margin-top: 8px; pointer-events: auto; }
+.tip .cite { margin: 0; }
+.tip__head { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+.tip__head .status { padding: 2px 6px; font-size: 11px; }
+.tip__quote { display: block; font: 12px/1.55 var(--font-doc); }
+.tip__quote mark { background: var(--passage-highlight); color: inherit; padding: 0 2px; border-radius: 2px; }
+.tip__src { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-top: 7px; }
+.tip__meta { display: block; font-size: 11px; color: var(--text-muted); }
+.tip__src .tip__meta { display: inline; }
+.tip__doc { display: flex; gap: 10px; align-items: flex-start; }
+.tip__name { display: block; font-weight: 600; font-size: 12px; overflow-wrap: anywhere; }
+.tip__hint { display: block; margin-top: 7px; padding-top: 5px; border-top: 1px dashed var(--border); font-size: 11px; color: var(--text-muted); }
+.thumb--sm { width: 26px; height: 33px; background-size: 16px 16px; background-position: 4px 6px; }
+.thumb--sm::after { font-size: 11px; padding: 0 3px; left: -3px; bottom: -3px; }
+.tip .cite, .tip .chip, .tip .status { pointer-events: none; }
+
 /* footer */
 .site-footer { padding: 14px 16px 26px; text-align: center; font-size: 11px; color: var(--text-muted); }
 
@@ -532,7 +564,7 @@ p .cite { margin-left: 4px; }
 .arrow-note { display: flex; align-items: center; gap: 6px; margin: 8px 0; font-size: 11px; color: var(--text-muted); }
 
 /* comparison table (outputs) */
-.table-wrap { overflow-x: auto; }
+.table-wrap { overflow: visible; }
 .cmp { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 520px; }
 .cmp th, .cmp td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
 .cmp th { font-size: 11px; font-weight: 600; color: var(--text-muted); background: #f7f9fb; }
@@ -572,6 +604,8 @@ p .cite { margin-left: 4px; }
   .two-col--wide { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 900px) {
+  .tip, .tip--right { position: fixed; left: 16px; right: 16px; bottom: 16px; top: auto; width: auto; max-width: none; transform: none; }
+  .tip--open { position: static; }
   .workspace { grid-template-columns: 200px minmax(0, 1fr); }
   .column--sources { grid-column: 1; grid-row: 1 / span 2; }
   .column--center { grid-column: 2; grid-row: 1; }
@@ -580,8 +614,12 @@ p .cite { margin-left: 4px; }
   .example__grid--3 > :nth-child(3) { grid-column: 2; }
   .two-col { grid-template-columns: minmax(0, 1fr); }
 }
+@media (max-width: 700px) {
+  .table-wrap { overflow-x: auto; }
+}
 @media (max-width: 620px) {
   .topbar { gap: 8px; }
+
   .project-header { padding-top: 18px; }
   .workspace { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 16px 16px 20px; }
   .column--sources, .column--center, .column--evidence { grid-column: 1; grid-row: auto; }

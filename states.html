@@ -90,6 +90,7 @@
       <a class="chip" href="#draft-v4">Draft v4</a>
       <a class="chip" href="#recheck">Recheck</a>
       <a class="chip" href="#example-reply">Example reply</a>
+      <a class="chip" href="#hover-card">Hover card</a>
       <a class="chip" href="#statuses">Assessment statuses</a>
     </nav>
   </div>
@@ -887,6 +888,24 @@
           <p class="step"><span class="num">1</span>The user bubble is light blue-gray. The assistant response has a dark identity icon.</p>
           <p class="step"><span class="num">2</span>An output attached to a response is a draft card, not the draft itself.</p>
           <p class="step"><span class="num">3</span>The source-count chip shows the current context count, which can differ from the count the draft was prepared from.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== hover card ===== -->
+    <section class="example" id="hover-card" aria-labelledby="h-hover-card">
+      <div class="example__head"><span class="ex-tag">Example</span><h2 id="h-hover-card">Hover card on citations and source chips</h2></div>
+      <p class="example__lead">Pointing at a citation or a source chip, or focusing it with the keyboard, shows a condensed card: the exact quotation, the source chip, page, section, source version, and the current assessment. The card is a preview only. Clicking still opens the full evidence panel. Both cards are shown open here for inspection.</p>
+      <div class="two-col">
+        <div>
+          <p class="ev-label">Citation card</p>
+          <div class="doc"><p>The supplier must delete customer data <mark class="unsupported">within 30 days</mark> following termination.<a class="cite" href="index.html#e3" aria-label="Evidence E3, Data Handling Schedule">E3</a></p><span class="tip tip--open" aria-hidden="true"><span class="tip__head"><span class="cite">E3</span><span class="status status--partial"><svg class="icon icon--xs"><use href="#i-circle-alert"/></svg>Partially supported</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span><span class="tip__hint">Click to open in the evidence panel</span></span></div>
+        </div>
+        <div>
+          <p class="ev-label">Source chip card</p>
+          <p><a class="chip chip--source" href="#source-preview"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule</a></p><span class="tip tip--open" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Data Handling Schedule</span><span class="tip__meta">PDF · v1 · 3 pages</span><span class="tip__meta">In context · Selected · E3</span></span></span><span class="tip__hint">Open the source page in the center pane</span></span>
+          <p class="step mt-8"><span class="num">1</span>On screens 900px and narrower, the card is fixed to the bottom of the screen so it is never cut off.</p>
+          <p class="step"><span class="num">2</span>The card is decorative for assistive technology. The full evidence panel carries the same information.</p>
         </div>
       </div>
     </section>
