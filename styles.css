@@ -605,7 +605,6 @@ mark.has-tip { cursor: help; }
 @keyframes spin { to { transform: rotate(360deg); } }
 /* steps complete at 4 s, 10 s, 12 s and 14 s; the active one spins */
 .step-item--1 .step-item__check { animation: fade-in .2s ease 4s forwards; }
-.step-item--2 .step-item__spin { animation: spin .9s linear infinite, step-window 14s steps(1, end) forwards; --on: 0; }
 .step-item--2 .step-item__spin { opacity: 1; animation: spin .9s linear infinite, fade-out .1s ease 10s forwards; }
 .step-item--2 .step-item__check { animation: fade-in .2s ease 10s forwards; }
 .step-item--3 .step-item__spin { animation: spin .9s linear infinite, fade-in .1s ease 10s forwards, fade-out .1s ease 12s forwards; }
@@ -617,6 +616,29 @@ mark.has-tip { cursor: help; }
 .step-item--3 { animation: fade-text .2s ease 12s forwards; }
 .step-item--4 { animation: fade-text .2s ease 14s forwards; }
 @keyframes fade-text { to { color: var(--text); } }
+
+/* three seconds after completion the live detail folds away; a disclosure keeps the record */
+.activity__live { overflow: hidden; max-height: 420px; animation: live-collapse .6s ease 17s forwards; }
+@keyframes live-collapse { to { max-height: 0; opacity: 0; margin-top: -4px; } }
+.activity__more { margin-top: 8px; opacity: 0; animation: fade-in .4s ease 17.4s forwards; }
+.activity__more summary { display: inline-flex; align-items: center; gap: 5px; min-height: 26px; font-size: 12px; font-weight: 500; color: var(--source-text); }
+.activity__more summary .icon { transition: transform .15s ease; }
+.activity__more[open] summary .icon { transform: rotate(180deg); }
+.activity__record { margin-top: 8px; }
+.activity__bar--final { margin-top: 0; }
+.activity__bar--final i { width: 100%; background: var(--supported-text); animation: none; }
+.activity__bar--final i::after { animation: none; }
+.agents--final .agent, .agents--final .agent__mark, .agents--final .agent__mark-live, .agents--final .agent__mark-done, .agents--final .agent__bar i, .agents--final .agent__status { animation: none; }
+.agents--final .agent { background: var(--supported-bg); border-color: #c2d9c9; }
+.agents--final .agent__mark { background: var(--supported-text); }
+.agents--final .agent__mark-live { display: none; }
+.agents--final .agent__mark-done { opacity: 1; }
+.agents--final .agent__status::after, .agents--final .agent__num::after { content: none; animation: none; }
+.agents--final .agent__bar i { width: 100%; background: var(--supported-text); }
+.steps--final .step-item, .steps--final .step-item__check, .steps--final .step-item__spin { animation: none; }
+.steps--final .step-item { color: var(--text); }
+.steps--final .step-item__check { opacity: 1; }
+.steps--final .step-item__spin { display: none; }
 
 /* the answer arrives once the agents finish */
 .msg--answer { opacity: 0; transform: translateY(6px); animation: answer-in .5s ease 14.8s forwards; }
@@ -817,5 +839,6 @@ body:has(.modal:target) { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .msg--answer { opacity: 1; transform: none; }
+  .activity__more { opacity: 1; }
   * { transition: none !important; animation: none !important; }
 }
