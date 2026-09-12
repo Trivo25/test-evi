@@ -120,7 +120,7 @@
       <ul class="source-list">
         <li class="source-card" id="src-agreement">
           <details class="card-menu">
-            <summary aria-label="Actions for Service Agreement"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
+            <summary aria-label="Actions for service_agreement_18571.pdf"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
             <div class="menu">
               <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</button>
               <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</button>
@@ -131,7 +131,7 @@
           <div class="source-card__body">
             <span class="thumb" role="img" aria-label="PDF file"></span>
             <div>
-              <span class="source-card__name">Service Agreement</span>
+              <span class="source-card__name">service_<wbr>agreement_<wbr>18571.pdf</span>
               <div class="source-card__meta">v2 · 12 pages</div>
               <div class="source-card__tags"><span class="chip chip--source sel-tag">Cited · E1</span></div>
             </div>
@@ -144,7 +144,7 @@
 
         <li class="source-card" id="src-addendum">
           <details class="card-menu">
-            <summary aria-label="Actions for Security Addendum"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
+            <summary aria-label="Actions for security_addendum_v1_2024.pdf"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
             <div class="menu">
               <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</button>
               <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</button>
@@ -155,7 +155,7 @@
           <div class="source-card__body">
             <span class="thumb" role="img" aria-label="PDF file"></span>
             <div>
-              <span class="source-card__name">Security Addendum</span>
+              <span class="source-card__name">security_<wbr>addendum_<wbr>v1_<wbr>2024.pdf</span>
               <div class="source-card__meta">v1 · 4 pages</div>
               <div class="source-card__tags"><span class="chip chip--source sel-tag">Cited · E2</span></div>
             </div>
@@ -168,7 +168,7 @@
 
         <li class="source-card" id="src-schedule">
           <details class="card-menu">
-            <summary aria-label="Actions for Data Handling Schedule"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
+            <summary aria-label="Actions for data_handling_schedule_rev3.pdf"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
             <div class="menu">
               <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</button>
               <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</button>
@@ -179,7 +179,7 @@
           <div class="source-card__body">
             <span class="thumb" role="img" aria-label="PDF file"></span>
             <div>
-              <span class="source-card__name">Data Handling Schedule</span>
+              <span class="source-card__name">data_<wbr>handling_<wbr>schedule_<wbr>rev3.pdf</span>
               <div class="source-card__meta">v1 · 3 pages</div>
               <div class="source-card__tags"><span class="chip chip--source sel-tag">Cited · E3</span></div>
             </div>
@@ -200,7 +200,7 @@
         <span class="chip chip--count">Draft v3</span>
       </div>
       <section class="chat chat--main" aria-labelledby="chat-heading">
-        <div class="chat__thread">
+        <div class="chat__thread" id="thread">
           <div class="msg msg--user">
             <div class="msg__bubble">
               <span class="msg__name">You</span>
@@ -212,6 +212,14 @@
             <div class="msg__body">
               <p class="msg__text">The draft is ready. The notification terms differ, and the deletion deadline needs support.</p>
             </div>
+            <details class="msg-menu">
+              <summary aria-label="Message actions"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
+              <div class="menu">
+                <button type="button" data-action="copy"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-files"/></svg>Copy</button>
+                <button type="button" data-action="branch"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-workflow"/></svg>Branch into new chat</button>
+                <button type="button" data-action="regenerate"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg>Regenerate</button>
+              </div>
+            </details>
           </div>
           <div class="msg msg--doc">
             <details class="docfold">
@@ -258,10 +266,10 @@
               <p class="prepared">Prepared from 3 source documents</p>
 
               <h3><span class="num">1</span>Incident notification</h3>
-              <p>Notice within 72 hours after the supplier confirms an incident.<a class="cite has-tip" href="#src-agreement" aria-label="Evidence E1, Service Agreement">E1<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E1</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Service Agreement</span><span class="tip__meta">Page 4 · §8 · Source v2</span></span></span></a> Notice within 24 hours after the supplier discovers one.<a class="cite has-tip" href="#src-addendum" aria-label="Evidence E2, Security Addendum">E2<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E2</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Security Addendum</span><span class="tip__meta">Page 2 · §2 · Source v1</span></span></span></a> The periods and the triggers differ. Neither document says which prevails.</p>
+              <p>Notice within 72 hours after the supplier confirms an incident.<a class="cite has-tip" href="#src-agreement" aria-label="Evidence E1, service_agreement_18571.pdf">E1<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E1</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>service_agreement_18571.pdf</span><span class="tip__meta">Page 4 · §8 · Source v2</span></span></span></a> Notice within 24 hours after the supplier discovers one.<a class="cite has-tip" href="#src-addendum" aria-label="Evidence E2, security_addendum_v1_2024.pdf">E2<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E2</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>security_addendum_v1_2024.pdf</span><span class="tip__meta">Page 2 · §2 · Source v1</span></span></span></a> The periods and the triggers differ. Neither document says which prevails.</p>
 
               <h3><span class="num">2</span>Data deletion</h3>
-              <p class="attention" id="deletion-statement">The supplier must delete customer data <mark class="unsupported has-tip" tabindex="0">within 30 days<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__note">Not stated in the cited passage.</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></mark> following termination.<a class="cite has-tip" href="#src-schedule" aria-label="Evidence E3, Data Handling Schedule">E3<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a></p>
+              <p class="attention" id="deletion-statement">The supplier must delete customer data <mark class="unsupported has-tip" tabindex="0">within 30 days<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__note">Not stated in the cited passage.</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>data_handling_schedule_rev3.pdf</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></mark> following termination.<a class="cite has-tip" href="#src-schedule" aria-label="Evidence E3, data_handling_schedule_rev3.pdf">E3<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>data_handling_schedule_rev3.pdf</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a></p>
             </div>
           </div>
           <div class="paper__footer">
@@ -294,7 +302,7 @@
                     <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
                     <span class="agent__text">
                       <span class="agent__name">Reader 1 <span class="agent__status"></span></span>
-                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Service Agreement</span><span class="agent__page">page <b class="agent__num"></b> of 12</span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>service_agreement_18571.pdf</span><span class="agent__page">page <b class="agent__num"></b> of 12</span></span>
                     </span>
                     <span class="agent__bar" aria-hidden="true"><i></i></span>
                   </li>
@@ -302,7 +310,7 @@
                     <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
                     <span class="agent__text">
                       <span class="agent__name">Reader 2 <span class="agent__status"></span></span>
-                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Security Addendum</span><span class="agent__page">page <b class="agent__num"></b> of 4</span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>security_addendum_v1_2024.pdf</span><span class="agent__page">page <b class="agent__num"></b> of 4</span></span>
                     </span>
                     <span class="agent__bar" aria-hidden="true"><i></i></span>
                   </li>
@@ -310,7 +318,7 @@
                     <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
                     <span class="agent__text">
                       <span class="agent__name">Reader 3 <span class="agent__status"></span></span>
-                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="agent__page">page <b class="agent__num"></b> of 3</span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>data_handling_schedule_rev3.pdf</span><span class="agent__page">page <b class="agent__num"></b> of 3</span></span>
                     </span>
                     <span class="agent__bar" aria-hidden="true"><i></i></span>
                   </li>
@@ -331,7 +339,7 @@
                     <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
                     <span class="agent__text">
                       <span class="agent__name">Reader 1 <span class="agent__status">done · no deadline</span></span>
-                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Service Agreement</span><span class="agent__page">page <b class="agent__num">12</b> of 12</span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>service_agreement_18571.pdf</span><span class="agent__page">page <b class="agent__num">12</b> of 12</span></span>
                     </span>
                     <span class="agent__bar" aria-hidden="true"><i></i></span>
                   </li>
@@ -339,7 +347,7 @@
                     <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
                     <span class="agent__text">
                       <span class="agent__name">Reader 2 <span class="agent__status">done · no deadline</span></span>
-                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Security Addendum</span><span class="agent__page">page <b class="agent__num">4</b> of 4</span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>security_addendum_v1_2024.pdf</span><span class="agent__page">page <b class="agent__num">4</b> of 4</span></span>
                     </span>
                     <span class="agent__bar" aria-hidden="true"><i></i></span>
                   </li>
@@ -347,7 +355,7 @@
                     <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
                     <span class="agent__text">
                       <span class="agent__name">Reader 3 <span class="agent__status">done · no deadline</span></span>
-                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="agent__page">page <b class="agent__num">3</b> of 3</span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>data_handling_schedule_rev3.pdf</span><span class="agent__page">page <b class="agent__num">3</b> of 3</span></span>
                     </span>
                     <span class="agent__bar" aria-hidden="true"><i></i></span>
                   </li>
@@ -366,9 +374,17 @@
           <div class="msg msg--ai msg--answer">
             <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
             <div class="msg__body">
-              <p class="msg__text">None of the three sources states a deletion deadline. The Data Handling Schedule requires deletion after termination but gives no period.<a class="cite has-tip" href="#src-schedule" aria-label="Evidence E3, Data Handling Schedule">E3<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a> I left section 2 unchanged and kept the phrase flagged so you can decide whether to remove it.</p>
+              <p class="msg__text">None of the three sources states a deletion deadline. The data_handling_schedule_rev3.pdf requires deletion after termination but gives no period.<a class="cite has-tip" href="#src-schedule" aria-label="Evidence E3, data_handling_schedule_rev3.pdf">E3<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>data_handling_schedule_rev3.pdf</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a> I left section 2 unchanged and kept the phrase flagged so you can decide whether to remove it.</p>
               <div class="answer__chips"><span class="chip"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-pen"/></svg>Section 2 unchanged</span><span class="chip chip--count">0 deadlines in 3 documents · 19 pages read</span></div>
             </div>
+            <details class="msg-menu">
+              <summary aria-label="Message actions"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
+              <div class="menu">
+                <button type="button" data-action="copy"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-files"/></svg>Copy</button>
+                <button type="button" data-action="branch"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-workflow"/></svg>Branch into new chat</button>
+                <button type="button" data-action="regenerate"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg>Regenerate</button>
+              </div>
+            </details>
           </div>
         </div>
         <div class="composer">
@@ -377,13 +393,15 @@
           <div class="composer__row">
             <label class="tool-btn" title="Upload document"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon" aria-hidden="true"><use href="#i-paperclip"/></svg><span class="sr-only">Upload document</span></label>
             <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Web search</label>
+            <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-book"/></svg>PubMed</label>
             <label class="tog"><input type="checkbox" checked><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg>Tools</label>
+            <button type="button" class="tool-btn" aria-label="Add tools or sources" title="Add tools or sources"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
             <label class="sel"><span class="sr-only">Mode</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg><select><option>Balanced</option><option>Careful</option><option>Quick</option></select></label>
             <label class="sel"><span class="sr-only">Speed</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg><select><option>Standard</option><option>Fast</option><option>Thorough</option></select></label>
             <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
             <span class="composer__spacer"></span>
             <button type="button" class="tool-btn" aria-label="Voice input"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>
-            <button type="button" class="btn btn--send" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
+            <button type="button" class="btn btn--send" id="send-btn" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
           </div>
         </div>
       </section>
@@ -435,10 +453,10 @@
               <p class="prepared">Prepared from 3 source documents</p>
 
               <h3><span class="num">1</span>Incident notification</h3>
-              <p>Notice within 72 hours after the supplier confirms an incident.<a class="cite has-tip" href="#src-agreement" aria-label="Evidence E1, Service Agreement">E1<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E1</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Service Agreement</span><span class="tip__meta">Page 4 · §8 · Source v2</span></span></span></a> Notice within 24 hours after the supplier discovers one.<a class="cite has-tip" href="#src-addendum" aria-label="Evidence E2, Security Addendum">E2<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E2</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Security Addendum</span><span class="tip__meta">Page 2 · §2 · Source v1</span></span></span></a> The periods and the triggers differ. Neither document says which prevails.</p>
+              <p>Notice within 72 hours after the supplier confirms an incident.<a class="cite has-tip" href="#src-agreement" aria-label="Evidence E1, service_agreement_18571.pdf">E1<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E1</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>service_agreement_18571.pdf</span><span class="tip__meta">Page 4 · §8 · Source v2</span></span></span></a> Notice within 24 hours after the supplier discovers one.<a class="cite has-tip" href="#src-addendum" aria-label="Evidence E2, security_addendum_v1_2024.pdf">E2<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E2</span></span><span class="tip__quote">“The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>security_addendum_v1_2024.pdf</span><span class="tip__meta">Page 2 · §2 · Source v1</span></span></span></a> The periods and the triggers differ. Neither document says which prevails.</p>
 
               <h3><span class="num">2</span>Data deletion</h3>
-              <p class="attention" id="deletion-statement-popout">The supplier must delete customer data <mark class="unsupported has-tip" tabindex="0">within 30 days<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__note">Not stated in the cited passage.</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></mark> following termination.<a class="cite has-tip" href="#src-schedule" aria-label="Evidence E3, Data Handling Schedule">E3<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a></p>
+              <p class="attention" id="deletion-statement-popout">The supplier must delete customer data <mark class="unsupported has-tip" tabindex="0">within 30 days<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__note">Not stated in the cited passage.</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>data_handling_schedule_rev3.pdf</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></mark> following termination.<a class="cite has-tip" href="#src-schedule" aria-label="Evidence E3, data_handling_schedule_rev3.pdf">E3<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>data_handling_schedule_rev3.pdf</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a></p>
             </div>
           </div>
           <div class="paper__footer">
@@ -449,5 +467,48 @@
     </div>
   </div>
 </div>
+<script>
+// prototype only: echo the typed message and show the assistant thinking (it never answers)
+(function () {
+  var input = document.getElementById('composer-input');
+  var send = document.getElementById('send-btn');
+  var thread = document.getElementById('thread');
+  var statuses = ['Reading your message', 'Checking the 3 sources in context', 'Comparing passages', 'Drafting a reply'];
+  function el(html) { var t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstChild; }
+  function esc(s) { return s.replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  function submit() {
+    var text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    thread.appendChild(el('<div class="msg msg--user"><div class="msg__bubble"><span class="msg__name">You</span><p class="msg__text">' + esc(text) + '</p></div></div>'));
+    var thinking = el('<div class="msg msg--ai msg--working" aria-live="polite"><span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span><div class="msg__body"><p class="msg__text working"><span class="working__dots working__dots--live" aria-hidden="true"><i></i><i></i><i></i></span><span class="working__label"></span></p></div></div>');
+    thread.appendChild(thinking);
+    var label = thinking.querySelector('.working__label');
+    var i = 0; label.textContent = statuses[0] + '…';
+    var timer = setInterval(function () { i = (i + 1) % statuses.length; label.textContent = statuses[i] + '…'; }, 1400);
+    toBottom(true);
+  }
+  function toBottom(smooth) { thread.scrollTo({ top: thread.scrollHeight, behavior: smooth ? 'smooth' : 'auto' }); }
+  toBottom(false);
+  // reveal the answer to the follow-up when the agents finish, and keep the newest content in view
+  var answer = document.querySelector('.msg--answer');
+  setTimeout(function () { answer.classList.add('is-in'); toBottom(true); }, 14800);
+  setTimeout(function () { toBottom(true); }, 17800); // after the agent detail folds away at 17 s
+  // message menus: copy the text for real, close the menu after any choice
+  document.querySelectorAll('.msg-menu').forEach(function (menu) {
+    menu.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-action]');
+      if (!btn) return;
+      if (btn.dataset.action === 'copy') {
+        var text = menu.parentElement.querySelector('.msg__text').innerText;
+        if (navigator.clipboard) navigator.clipboard.writeText(text);
+      }
+      menu.removeAttribute('open');
+    });
+  });
+  send.addEventListener('click', submit);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submit(); } });
+})();
+</script>
 </body>
 </html>
