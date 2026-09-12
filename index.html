@@ -45,6 +45,15 @@
 <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
 <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></symbol>
 <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-paperclip" viewBox="0 0 24 24"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></symbol>
+<symbol id="i-align-left" viewBox="0 0 24 24"><path d="M15 12H3"/><path d="M17 18H3"/><path d="M21 6H3"/></symbol>
+<symbol id="i-align-center" viewBox="0 0 24 24"><path d="M17 12H7"/><path d="M19 18H5"/><path d="M21 6H3"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
+<symbol id="i-list-ordered" viewBox="0 0 24 24"><path d="M10 12h11"/><path d="M10 18h11"/><path d="M10 6h11"/><path d="M4 10h2"/><path d="M4 6h1v4"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></symbol>
+<symbol id="i-redo" viewBox="0 0 24 24"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5 5.5 5.5 0 0 0 9.5 20H13"/></symbol>
 </defs></svg>
 
 <header class="topbar">
@@ -82,23 +91,23 @@
           <details class="card-menu">
             <summary aria-label="Actions for Service Agreement"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
             <div class="menu">
-              <a href="states.html#rename"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</a>
-              <a href="states.html#replace"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</a>
+              <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</button>
+              <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</button>
               <hr>
-              <a class="menu__danger" href="states.html#remove"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trash"/></svg>Remove from project</a>
+              <button type="button" class="menu__danger"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trash"/></svg>Remove from project</button>
             </div>
           </details>
           <div class="source-card__body">
             <span class="thumb" role="img" aria-label="PDF file"></span>
             <div>
-              <a class="source-card__name" href="states.html#source-preview">Service Agreement</a>
+              <span class="source-card__name">Service Agreement</span>
               <div class="source-card__meta">v2 · 12 pages</div>
               <div class="source-card__tags"><span class="chip chip--source sel-tag">Selected · E1</span></div>
             </div>
           </div>
           <div class="source-card__foot">
             <label class="check"><input type="checkbox" checked> In context</label>
-            <a class="pin-btn pin-btn--on" href="states.html#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pinned</a>
+            <button type="button" class="pin-btn pin-btn--on"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pinned</button>
           </div>
         </li>
 
@@ -106,23 +115,23 @@
           <details class="card-menu">
             <summary aria-label="Actions for Security Addendum"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
             <div class="menu">
-              <a href="states.html#rename"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</a>
-              <a href="states.html#replace"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</a>
+              <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</button>
+              <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</button>
               <hr>
-              <a class="menu__danger" href="states.html#remove"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trash"/></svg>Remove from project</a>
+              <button type="button" class="menu__danger"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trash"/></svg>Remove from project</button>
             </div>
           </details>
           <div class="source-card__body">
             <span class="thumb" role="img" aria-label="PDF file"></span>
             <div>
-              <a class="source-card__name" href="states.html#source-preview">Security Addendum</a>
+              <span class="source-card__name">Security Addendum</span>
               <div class="source-card__meta">v1 · 4 pages</div>
               <div class="source-card__tags"><span class="chip chip--source sel-tag">Selected · E2</span></div>
             </div>
           </div>
           <div class="source-card__foot">
             <label class="check"><input type="checkbox" checked> In context</label>
-            <a class="pin-btn" href="states.html#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
+            <button type="button" class="pin-btn"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</button>
           </div>
         </li>
 
@@ -130,23 +139,23 @@
           <details class="card-menu">
             <summary aria-label="Actions for Data Handling Schedule"><svg class="icon" aria-hidden="true"><use href="#i-ellipsis"/></svg></summary>
             <div class="menu">
-              <a href="states.html#rename"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</a>
-              <a href="states.html#replace"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</a>
+              <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Rename</button>
+              <button type="button"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Replace file</button>
               <hr>
-              <a class="menu__danger" href="states.html#remove"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trash"/></svg>Remove from project</a>
+              <button type="button" class="menu__danger"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-trash"/></svg>Remove from project</button>
             </div>
           </details>
           <div class="source-card__body">
             <span class="thumb" role="img" aria-label="PDF file"></span>
             <div>
-              <a class="source-card__name" href="states.html#source-preview">Data Handling Schedule</a>
+              <span class="source-card__name">Data Handling Schedule</span>
               <div class="source-card__meta">v1 · 3 pages</div>
               <div class="source-card__tags"><span class="chip chip--source sel-tag">Selected · E3</span></div>
             </div>
           </div>
           <div class="source-card__foot">
             <label class="check"><input type="checkbox" checked> In context</label>
-            <a class="pin-btn" href="states.html#pin"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</a>
+            <button type="button" class="pin-btn"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pin"/></svg>Pin</button>
           </div>
         </li>
       </ul>
@@ -182,8 +191,13 @@
           <label class="sr-only" for="composer-input">Message</label>
           <textarea id="composer-input" rows="2" placeholder="Ask, compare, or revise this draft…"></textarea>
           <div class="composer__row">
+            <label class="tool-btn" title="Upload document"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon" aria-hidden="true"><use href="#i-paperclip"/></svg><span class="sr-only">Upload document</span></label>
+            <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Web search</label>
+            <label class="tog"><input type="checkbox" checked><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg>Tools</label>
             <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
-            <a class="btn btn--send" href="states.html#example-reply" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+            <span class="composer__spacer"></span>
+            <button type="button" class="tool-btn" aria-label="Voice input"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>
+            <button type="button" class="btn btn--send" aria-label="Send"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></button>
           </div>
         </div>
       </section>
@@ -201,7 +215,28 @@
             <span>Review brief</span>
             <span class="badge-draft">DRAFT</span>
             <span class="spacer"></span>
-            <a class="btn btn--sm" href="states.html#edit"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit paragraph</a>
+            <button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit paragraph</button>
+          </div>
+          <div class="fmt-bar" role="toolbar" aria-label="Formatting">
+            <label class="sr-only" for="fmt-font">Font</label>
+            <select id="fmt-font" class="fmt-select"><option>Georgia</option><option>Inter</option><option>Times New Roman</option></select>
+            <label class="sr-only" for="fmt-size">Font size</label>
+            <select id="fmt-size" class="fmt-select fmt-select--sm"><option>11</option><option>12</option><option>13</option><option>14</option><option selected>15</option><option>16</option><option>18</option><option>24</option></select>
+            <span class="fmt-sep"></span>
+            <button type="button" class="fmt-btn fmt-btn--on" aria-label="Bold" aria-pressed="true"><b>B</b></button>
+            <button type="button" class="fmt-btn" aria-label="Italic"><i>I</i></button>
+            <button type="button" class="fmt-btn" aria-label="Underline"><u>U</u></button>
+            <span class="fmt-sep"></span>
+            <label class="fmt-btn fmt-color" title="Text color"><span class="fmt-color__a">A</span><input type="color" value="#202326" aria-label="Text color"></label>
+            <label class="fmt-btn fmt-color" title="Highlight"><span class="fmt-color__a fmt-color__a--hl">A</span><input type="color" value="#f6e6b8" aria-label="Highlight color"></label>
+            <span class="fmt-sep"></span>
+            <button type="button" class="fmt-btn fmt-btn--on" aria-label="Align left" aria-pressed="true"><svg class="icon" aria-hidden="true"><use href="#i-align-left"/></svg></button>
+            <button type="button" class="fmt-btn" aria-label="Align center"><svg class="icon" aria-hidden="true"><use href="#i-align-center"/></svg></button>
+            <button type="button" class="fmt-btn" aria-label="Bulleted list"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg></button>
+            <button type="button" class="fmt-btn" aria-label="Insert link"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></button>
+            <span class="fmt-spacer"></span>
+            <button type="button" class="fmt-btn" aria-label="Undo"><svg class="icon" aria-hidden="true"><use href="#i-undo"/></svg></button>
+            <button type="button" class="fmt-btn" aria-label="Redo"><svg class="icon" aria-hidden="true"><use href="#i-redo"/></svg></button>
           </div>
           <div class="paper__body">
             <div class="doc">
@@ -247,7 +282,7 @@
           <div class="excerpt__body">
             <blockquote>The supplier must notify the customer <mark>within 72 hours after confirming</mark> a security incident.</blockquote>
             <div class="excerpt__src">
-              <a class="chip chip--source has-tip" href="states.html#source-preview"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Service Agreement<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Service Agreement</span><span class="tip__meta">PDF · v2 · 12 pages</span><span class="tip__meta">In context · Pinned</span></span></span></span></a>
+              <span class="chip chip--source has-tip" tabindex="0"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Service Agreement<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Service Agreement</span><span class="tip__meta">PDF · v2 · 12 pages</span><span class="tip__meta">In context · Pinned</span></span></span></span></span>
               <span class="excerpt__loc">Page 4 · §8 · Source v2</span>
             </div>
           </div>
@@ -264,7 +299,7 @@
           <div class="excerpt__body">
             <blockquote>The supplier must notify the customer <mark>within 24 hours after discovering</mark> a security incident.</blockquote>
             <div class="excerpt__src">
-              <a class="chip chip--source has-tip" href="states.html#source-preview"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Security Addendum<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Security Addendum</span><span class="tip__meta">PDF · v1 · 4 pages</span><span class="tip__meta">In context</span></span></span></span></a>
+              <span class="chip chip--source has-tip" tabindex="0"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Security Addendum<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Security Addendum</span><span class="tip__meta">PDF · v1 · 4 pages</span><span class="tip__meta">In context</span></span></span></span></span>
               <span class="excerpt__loc">Page 2 · §2 · Source v1</span>
             </div>
           </div>
@@ -281,7 +316,7 @@
           <div class="excerpt__body">
             <blockquote>The supplier must <mark>delete customer data following termination</mark> of the agreement.</blockquote>
             <div class="excerpt__src">
-              <a class="chip chip--source has-tip" href="states.html#source-preview"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Data Handling Schedule</span><span class="tip__meta">PDF · v1 · 3 pages</span><span class="tip__meta">In context · Selected · E3</span></span></span></span></a>
+              <span class="chip chip--source has-tip" tabindex="0"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule<span class="tip tip--right" aria-hidden="true"><span class="tip__doc"><span class="thumb thumb--sm"></span><span><span class="tip__name">Data Handling Schedule</span><span class="tip__meta">PDF · v1 · 3 pages</span><span class="tip__meta">In context · Selected · E3</span></span></span></span></span>
               <span class="excerpt__loc">Page 2 · §4 · Source v1</span>
             </div>
           </div>
