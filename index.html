@@ -89,7 +89,7 @@
     <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg><span class="sb-label">Settings</span></button>
     <button type="button" class="sb-account">
       <img class="sb-avatar" src="assets/avatar.svg" alt="" width="28" height="28">
-      <span class="sb-label sb-account__text"><span class="sb-account__name">Mira Keller</span><span class="sb-account__plan">Pro plan</span></span>
+      <span class="sb-label sb-account__text"><span class="sb-account__name">Florian Kluge</span><span class="sb-account__plan">Pro plan</span></span>
     </button>
   </div>
 </aside>
@@ -107,12 +107,15 @@
   <div class="workspace">
 
     <!-- sources -->
+    <input type="checkbox" id="src-toggle" class="sr-only">
     <aside class="column column--sources" aria-labelledby="sources-heading">
       <div class="col-head">
         <svg class="icon" aria-hidden="true"><use href="#i-files"/></svg>
-        <h2 id="sources-heading">Sources</h2>
-        <span class="chip chip--count">3 in context</span>
+        <h2 id="sources-heading"><span class="src-label">Sources</span></h2>
+        <span class="chip chip--count src-label">3 in context</span>
+        <label class="sb-btn src-toggle" for="src-toggle" title="Collapse sources"><svg class="icon" aria-hidden="true"><use href="#i-panel-left"/></svg><span class="sr-only">Collapse sources</span></label>
       </div>
+      <div class="src-rail" aria-hidden="true"><span class="src-rail__label">Sources</span><span class="chip chip--count">3</span></div>
 
       <ul class="source-list">
         <li class="source-card" id="src-agreement">
@@ -277,7 +280,54 @@
           <div class="msg msg--ai msg--working" aria-live="polite">
             <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
             <div class="msg__body">
-              <p class="msg__text working"><span class="working__dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="working__label">Checking the three sources for a deadline…</span></p>
+              <div class="activity">
+                <div class="activity__head">
+                  <span class="working__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="activity__title"><span class="activity__title-live">3 agents are exploring 3 documents</span><span class="activity__title-done"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-circle-check"/></svg>3 agents finished · no deadline found</span></span>
+                  <span class="activity__pct" aria-hidden="true"></span>
+                  <span class="sr-only">Progress updates as agents read the sources.</span>
+                </div>
+                <div class="activity__bar" aria-hidden="true"><i></i></div>
+                <ul class="agents">
+                  <li class="agent agent--1">
+                    <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
+                    <span class="agent__text">
+                      <span class="agent__name">Reader 1 <span class="agent__status"></span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Service Agreement</span><span class="agent__page">page <b class="agent__num"></b> of 12</span></span>
+                    </span>
+                    <span class="agent__bar" aria-hidden="true"><i></i></span>
+                  </li>
+                  <li class="agent agent--2">
+                    <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
+                    <span class="agent__text">
+                      <span class="agent__name">Reader 2 <span class="agent__status"></span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Security Addendum</span><span class="agent__page">page <b class="agent__num"></b> of 4</span></span>
+                    </span>
+                    <span class="agent__bar" aria-hidden="true"><i></i></span>
+                  </li>
+                  <li class="agent agent--3">
+                    <span class="agent__mark" aria-hidden="true"><svg class="icon icon--xs agent__mark-live"><use href="#i-sparkles"/></svg><svg class="icon icon--xs agent__mark-done"><use href="#i-check"/></svg></span>
+                    <span class="agent__text">
+                      <span class="agent__name">Reader 3 <span class="agent__status"></span></span>
+                      <span class="agent__task"><span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="agent__page">page <b class="agent__num"></b> of 3</span></span>
+                    </span>
+                    <span class="agent__bar" aria-hidden="true"><i></i></span>
+                  </li>
+                </ul>
+                <ol class="steps" aria-label="Steps">
+                  <li class="step-item step-item--1"><span class="step-item__icon" aria-hidden="true"><svg class="icon icon--xs step-item__check"><use href="#i-check"/></svg><i class="step-item__spin"></i></span>Read sources</li>
+                  <li class="step-item step-item--2"><span class="step-item__icon" aria-hidden="true"><svg class="icon icon--xs step-item__check"><use href="#i-check"/></svg><i class="step-item__spin"></i></span>Find deadlines</li>
+                  <li class="step-item step-item--3"><span class="step-item__icon" aria-hidden="true"><svg class="icon icon--xs step-item__check"><use href="#i-check"/></svg><i class="step-item__spin"></i></span>Compare passages</li>
+                  <li class="step-item step-item--4"><span class="step-item__icon" aria-hidden="true"><svg class="icon icon--xs step-item__check"><use href="#i-check"/></svg><i class="step-item__spin"></i></span>Revise section 2</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="msg msg--ai msg--answer">
+            <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
+            <div class="msg__body">
+              <p class="msg__text">None of the three sources states a deletion deadline. The Data Handling Schedule requires deletion after termination but gives no period.<a class="cite has-tip" href="#src-schedule" aria-label="Evidence E3, Data Handling Schedule">E3<span class="tip" aria-hidden="true"><span class="tip__head"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-quote"/></svg>Source excerpt<span class="cite">E3</span></span><span class="tip__quote">“The supplier must <mark>delete customer data following termination</mark> of the agreement.”</span><span class="tip__src"><span class="chip chip--source"><svg class="icon icon--xs"><use href="#i-file-text"/></svg>Data Handling Schedule</span><span class="tip__meta">Page 2 · §4 · Source v1</span></span></span></a> I left section 2 unchanged and kept the phrase flagged so you can decide whether to remove it.</p>
+              <div class="answer__chips"><span class="chip"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-file-pen"/></svg>Section 2 unchanged</span><span class="chip chip--count">0 deadlines in 3 documents · 19 pages read</span></div>
             </div>
           </div>
         </div>
@@ -288,6 +338,8 @@
             <label class="tool-btn" title="Upload document"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon" aria-hidden="true"><use href="#i-paperclip"/></svg><span class="sr-only">Upload document</span></label>
             <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg>Web search</label>
             <label class="tog"><input type="checkbox" checked><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg>Tools</label>
+            <label class="sel"><span class="sr-only">Mode</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg><select><option>Balanced</option><option>Careful</option><option>Quick</option></select></label>
+            <label class="sel"><span class="sr-only">Speed</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg><select><option>Standard</option><option>Fast</option><option>Thorough</option></select></label>
             <span class="chip chip--source"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
             <span class="composer__spacer"></span>
             <button type="button" class="tool-btn" aria-label="Voice input"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></button>
