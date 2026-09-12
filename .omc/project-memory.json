@@ -1,0 +1,74 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1789202822083,
+  "projectRoot": "/Users/trivo/Downloads/test-page/test-evi",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {},
+  "hotPaths": [
+    {
+      "path": "styles.css",
+      "accessCount": 2,
+      "lastAccessed": 1789205716214,
+      "type": "file"
+    },
+    {
+      "path": "index.html",
+      "accessCount": 2,
+      "lastAccessed": 1789205778755,
+      "type": "file"
+    },
+    {
+      "path": "states.html",
+      "accessCount": 1,
+      "lastAccessed": 1789206113836,
+      "type": "file"
+    },
+    {
+      "path": "outputs.html",
+      "accessCount": 1,
+      "lastAccessed": 1789206154489,
+      "type": "file"
+    },
+    {
+      "path": "workflow.html",
+      "accessCount": 1,
+      "lastAccessed": 1789206193236,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1789206313145,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
