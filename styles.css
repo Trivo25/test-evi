@@ -370,8 +370,8 @@ p .cite { margin-left: 4px; }
 .chat--main .chat__thread { flex: 1; }
 .chat__thread { display: flex; flex-direction: column; gap: 14px; }
 .msg--doc { position: relative; display: block; margin: 2px 0 8px; }
-.docfold { position: relative; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow-card); }
-.docfold__summary { display: block; position: relative; padding: 10px 178px 10px 12px; border-radius: 10px; }
+.docfold { display: block; width: 100%; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow-card); }
+.docfold__summary { display: block; padding: 10px 12px; border-radius: 10px; }
 .docfold__summary:hover { background: #f7f9fb; }
 .docfold[open] .docfold__summary { border-bottom: 1px solid var(--border); border-radius: 10px 10px 0 0; }
 .docfold__row { display: flex; align-items: flex-start; gap: 12px; }
@@ -391,9 +391,8 @@ p .cite { margin-left: 4px; }
   margin-top: 5px; font: 12px/1.5 var(--font-doc); color: #4a545e;
 }
 .docfold[open] .docfold__excerpt { display: none; }
-/* expand and open share one row in the top-right corner; open lives outside <details> so it never toggles it */
-.docfold__toggle { position: absolute; top: 10px; right: 84px; }
-.docfold__open { position: absolute; top: 10px; right: 12px; z-index: 2; }
+/* open is a link inside the summary: the click activates the link only, so the fold does not toggle */
+.docfold__actions { display: flex; gap: 6px; flex-shrink: 0; }
 .docfold__toggle .icon { transition: transform .15s ease; }
 .docfold[open] .docfold__toggle .icon { transform: rotate(180deg); }
 .docfold__label-close, .docfold[open] .docfold__label-open { display: none; }
@@ -402,10 +401,12 @@ p .cite { margin-left: 4px; }
 .msg--doc .paper__body { padding: 24px 28px 22px; }
 .msg { display: flex; gap: 10px; }
 .msg--user { justify-content: flex-end; }
-.msg--user .msg__text {
-  max-width: 82%; padding: 9px 13px;
-  background: #e9eef4; border-radius: 16px; border-bottom-right-radius: 5px;
+.msg__bubble {
+  max-width: 82%; padding: 8px 13px 9px;
+  background: #dfe9f6; border: 1px solid #c3d5ea; border-radius: 16px; border-bottom-right-radius: 5px;
 }
+.msg__bubble .msg__name { margin-bottom: 2px; color: var(--source-text); }
+.msg__bubble .msg__text { color: #1b2a3c; }
 .msg__who {
   display: grid; place-items: center; flex-shrink: 0;
   width: 26px; height: 26px; border-radius: 7px;
@@ -580,11 +581,12 @@ p .cite { margin-left: 4px; }
 
 
 /* document pop-out (css only, opened with #doc-modal) */
-.modal { display: none; position: fixed; inset: 0; z-index: 100; padding: 24px 16px; }
-.modal:target { display: grid; place-items: start center; }
+.modal { display: none; position: fixed; inset: 0; z-index: 100; padding: 16px; }
+.modal:target { display: grid; place-items: center; }
 .modal__backdrop { position: absolute; inset: 0; background: rgba(24, 30, 36, .45); backdrop-filter: blur(2px); }
 .modal__panel {
-  position: relative; width: min(880px, 100%); max-height: calc(100vh - 48px);
+  /* a4 portrait: width follows the available height (1 : 1.414), capped by the viewport width */
+  position: relative; width: min(calc((100vh - 32px) / 1.3), 100%); height: calc(100vh - 32px);
   display: flex; flex-direction: column;
   background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
   box-shadow: 0 24px 64px rgba(20, 26, 32, .35);
@@ -593,11 +595,18 @@ p .cite { margin-left: 4px; }
 .modal__head .icon { color: var(--text-muted); }
 .modal__head .spacer { flex: 1; }
 .modal__title { font-weight: 600; }
-.modal__body { overflow: auto; border-radius: 0 0 12px 12px; }
-.paper--popout { border: 0; border-radius: 0; box-shadow: none; }
-.paper--popout .paper__body { padding: 32px 44px 30px; }
-.paper--popout .doc { max-width: 680px; margin: 0 auto; }
+.modal__body { flex: 1; overflow: auto; display: flex; flex-direction: column; border-radius: 0 0 12px 12px; }
+.paper--popout { flex: 1; display: flex; flex-direction: column; border: 0; border-radius: 0; box-shadow: none; }
+.paper--popout .paper__body { flex: 1; }
+.paper--popout .paper__body { padding: 56px 64px 48px; }
+.paper--popout .doc { max-width: none; }
+.paper--popout .doc h2 { font-size: 26px; }
+.paper--popout .doc p { font-size: 16px; line-height: 1.7; }
 .paper--popout .fmt-btn--extra { display: inline-grid; }
+@media (max-height: 860px) {
+  .paper--popout .fmt-edit { padding: 3px 6px; }
+  .paper--popout .fmt-edit__label { display: none; }
+}
 body:has(.modal:target) { overflow: hidden; }
 
 /* states page */
@@ -661,9 +670,10 @@ body:has(.modal:target) { overflow: hidden; }
   .card-menu { top: 2px; right: 2px; }
   .source-card__body { padding-right: 40px; }
   .composer textarea, .edit-block textarea, .card-form input[type="text"] { font-size: 16px; }
-  .docfold__summary { padding-right: 104px; }
-  .docfold__toggle { top: 54px; right: 12px; }
-  .modal { padding: 12px 8px; }
+  .docfold__row { flex-wrap: wrap; }
+  .docfold__actions { width: 100%; justify-content: flex-end; }
+  .modal { padding: 8px; }
+  .modal__panel { width: 100%; height: calc(100vh - 16px); }
   .paper--popout .paper__body { padding: 20px 18px; }
   .chat--main { min-height: 0; }
   .chat--main .composer { position: static; }

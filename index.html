@@ -163,7 +163,10 @@
       <section class="chat chat--main" aria-labelledby="chat-heading">
         <div class="chat__thread">
           <div class="msg msg--user">
-            <p class="msg__text">Compare these documents and draft a short brief. Flag anything I need to check.</p>
+            <div class="msg__bubble">
+              <span class="msg__name">You</span>
+              <p class="msg__text">Compare these documents and draft a short brief. Flag anything I need to check.</p>
+            </div>
           </div>
           <div class="msg msg--ai">
             <span class="msg__who msg__who--ai" aria-hidden="true"><svg class="icon"><use href="#i-sparkles"/></svg></span>
@@ -181,8 +184,11 @@
                     <span class="docfold__meta">Draft v3 · 3 linked passages · Human review pending</span>
                     <span class="docfold__excerpt">Obligations &amp; open questions. Notice within 72 hours after the supplier confirms an incident. Notice within 24 hours after the supplier discovers one. The periods and the triggers differ.</span>
                   </span>
+                  <span class="docfold__actions">
+                    <span class="btn btn--sm docfold__toggle"><span class="docfold__label-open">Expand</span><span class="docfold__label-close">Collapse</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></span>
+                    <a class="btn btn--sm docfold__open" href="#doc-modal">Open <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                  </span>
                 </span>
-                <span class="btn btn--sm docfold__toggle"><span class="docfold__label-open">Expand</span><span class="docfold__label-close">Collapse</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></span>
               </summary>
         <article class="paper" id="draft" aria-label="Review brief, draft v3">
           <div class="fmt-bar" role="toolbar" aria-label="Formatting">
@@ -225,7 +231,6 @@
           </div>
         </article>
             </details>
-            <a class="btn btn--sm docfold__open" href="#doc-modal">Open <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
           </div>
         </div>
         <div class="composer">
