@@ -174,23 +174,17 @@
           <div class="msg msg--doc">
             <details class="docfold">
               <summary class="docfold__summary" aria-label="Review brief, draft v3. Expand or collapse the document">
-                <span class="docfold__thumb" aria-hidden="true"><i></i><i></i><i></i><i class="hl"></i><i></i></span>
-                <span class="docfold__text">
-                  <span class="docfold__title">Review brief <span class="badge-draft">DRAFT</span></span>
-                  <span class="docfold__meta">Draft v3 · 3 linked passages · Human review pending</span>
-                  <span class="docfold__excerpt">Obligations &amp; open questions. Notice within 72 hours after the supplier confirms an incident. Notice within 24 hours after the supplier discovers one. The periods and the triggers differ.</span>
+                <span class="docfold__row">
+                  <span class="docfold__thumb" aria-hidden="true"><i></i><i></i><i></i><i class="hl"></i><i></i></span>
+                  <span class="docfold__text">
+                    <span class="docfold__title">Review brief <span class="badge-draft">DRAFT</span></span>
+                    <span class="docfold__meta">Draft v3 · 3 linked passages · Human review pending</span>
+                    <span class="docfold__excerpt">Obligations &amp; open questions. Notice within 72 hours after the supplier confirms an incident. Notice within 24 hours after the supplier discovers one. The periods and the triggers differ.</span>
+                  </span>
                 </span>
                 <span class="btn btn--sm docfold__toggle"><span class="docfold__label-open">Expand</span><span class="docfold__label-close">Collapse</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron-down"/></svg></span>
               </summary>
-            <div class="paper-wrap">
         <article class="paper" id="draft" aria-label="Review brief, draft v3">
-          <div class="paper__toolbar">
-            <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
-            <span>Review brief</span>
-            <span class="badge-draft">DRAFT</span>
-            <span class="spacer"></span>
-            <button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit paragraph</button>
-          </div>
           <div class="fmt-bar" role="toolbar" aria-label="Formatting">
             <label class="sr-only" for="fmt-font">Font</label>
             <select id="fmt-font" class="fmt-select"><option>Georgia</option><option>Inter</option><option>Times New Roman</option></select>
@@ -211,6 +205,7 @@
             <span class="fmt-spacer"></span>
             <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Undo"><svg class="icon" aria-hidden="true"><use href="#i-undo"/></svg></button>
             <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Redo"><svg class="icon" aria-hidden="true"><use href="#i-redo"/></svg></button>
+            <button type="button" class="btn btn--sm fmt-edit" aria-label="Edit paragraph" title="Edit paragraph"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg><span class="fmt-edit__label">Edit paragraph</span></button>
           </div>
           <div class="paper__body">
             <div class="doc">
@@ -229,7 +224,6 @@
             <span><svg class="icon" aria-hidden="true"><use href="#i-circle-dashed"/></svg>Human review pending</span>
           </div>
         </article>
-            </div>
             </details>
             <a class="btn btn--sm docfold__open" href="#doc-modal">Open <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
           </div>
@@ -332,13 +326,6 @@
     </div>
     <div class="modal__body">
         <article class="paper paper--popout" id="draft-popout" aria-label="Review brief, draft v3">
-          <div class="paper__toolbar">
-            <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
-            <span>Review brief</span>
-            <span class="badge-draft">DRAFT</span>
-            <span class="spacer"></span>
-            <button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit paragraph</button>
-          </div>
           <div class="fmt-bar" role="toolbar" aria-label="Formatting">
             <label class="sr-only" for="fmt-font-m">Font</label>
             <select id="fmt-font-m" class="fmt-select"><option>Georgia</option><option>Inter</option><option>Times New Roman</option></select>
@@ -359,6 +346,7 @@
             <span class="fmt-spacer"></span>
             <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Undo"><svg class="icon" aria-hidden="true"><use href="#i-undo"/></svg></button>
             <button type="button" class="fmt-btn fmt-btn--extra" aria-label="Redo"><svg class="icon" aria-hidden="true"><use href="#i-redo"/></svg></button>
+            <button type="button" class="btn btn--sm fmt-edit" aria-label="Edit paragraph" title="Edit paragraph"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-pen-line"/></svg><span class="fmt-edit__label">Edit paragraph</span></button>
           </div>
           <div class="paper__body">
             <div class="doc">
