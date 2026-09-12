@@ -54,16 +54,52 @@
 <symbol id="i-list" viewBox="0 0 24 24"><path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/></symbol>
 <symbol id="i-list-ordered" viewBox="0 0 24 24"><path d="M10 12h11"/><path d="M10 18h11"/><path d="M10 6h11"/><path d="M4 10h2"/><path d="M4 6h1v4"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></symbol>
 <symbol id="i-redo" viewBox="0 0 24 24"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5 5.5 5.5 0 0 0 9.5 20H13"/></symbol>
+<symbol id="i-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></symbol>
+<symbol id="i-blocks" viewBox="0 0 24 24"><rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
 </defs></svg>
 
+<input type="checkbox" id="sb-toggle" class="sr-only">
+<div class="app">
+<aside class="sidebar" aria-label="Navigation">
+  <div class="sidebar__top">
+    <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-quote"/></svg></span><span class="sb-label">evidence</span></a>
+    <label class="sb-btn sb-toggle" for="sb-toggle" title="Collapse sidebar"><svg class="icon" aria-hidden="true"><use href="#i-panel-left"/></svg><span class="sr-only">Collapse sidebar</span></label>
+  </div>
+  <button type="button" class="sb-new"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg><span class="sb-label">New chat</span></button>
+  <nav class="sb-menu" aria-label="Main">
+    <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="sb-label">Search</span></button>
+    <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><span class="sb-label">Projects</span></button>
+    <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg><span class="sb-label">Skills</span></button>
+    <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-blocks"/></svg><span class="sb-label">Plugins</span></button>
+  </nav>
+  <div class="sb-section sb-label">Recents</div>
+  <nav class="sb-history" aria-label="Chat history">
+    <a class="sb-chat is-active" href="index.html" aria-current="page"><span class="sb-label">Vendor agreement</span></a>
+    <a class="sb-chat" href="#"><span class="sb-label">NDA redlines · Acme</span></a>
+    <a class="sb-chat" href="#"><span class="sb-label">Lease renewal terms</span></a>
+    <a class="sb-chat" href="#"><span class="sb-label">Supplier SLA comparison</span></a>
+    <a class="sb-chat" href="#"><span class="sb-label">Privacy policy gap check</span></a>
+    <a class="sb-chat" href="#"><span class="sb-label">Q3 board memo sources</span></a>
+    <a class="sb-chat" href="#"><span class="sb-label">Insurance clause summary</span></a>
+  </nav>
+  <div class="sidebar__bottom">
+    <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-settings"/></svg><span class="sb-label">Settings</span></button>
+    <button type="button" class="sb-account">
+      <img class="sb-avatar" src="assets/avatar.svg" alt="" width="28" height="28">
+      <span class="sb-label sb-account__text"><span class="sb-account__name">Mira Keller</span><span class="sb-account__plan">Pro plan</span></span>
+    </button>
+  </div>
+</aside>
+<div class="app__main">
 <header class="topbar">
-  <a class="brand" href="index.html"><span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#i-quote"/></svg></span>evidence</a>
   <nav class="crumbs" aria-label="Breadcrumb">
     <a href="#">Projects</a>
     <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>
     <span class="current" aria-current="location">Vendor agreement</span>
   </nav>
-  <span class="avatar" role="img" aria-label="Signed in as M. Keller">MK</span>
 </header>
 
 
@@ -317,6 +353,8 @@
 
   </div>
 </main>
+</div>
+</div>
 
 <div class="modal" id="doc-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <a class="modal__backdrop" href="#_" aria-label="Close"></a>
