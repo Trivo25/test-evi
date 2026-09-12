@@ -382,6 +382,33 @@ p .cite { margin-left: 4px; }
 .chat--main .chat__thread { flex: 1; }
 .chat__thread { display: flex; flex-direction: column; gap: 14px; }
 .msg--doc { display: block; margin: 2px 0 8px; }
+.docfold { border: 1px solid var(--border); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow-card); }
+.docfold__summary { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; }
+.docfold__summary:hover { background: #f7f9fb; }
+.docfold[open] .docfold__summary { border-bottom: 1px solid var(--border); border-radius: 10px 10px 0 0; }
+.docfold__thumb {
+  position: relative; flex-shrink: 0; display: flex; flex-direction: column; gap: 4px;
+  width: 40px; height: 52px; padding: 9px 6px 0;
+  border: 1px solid #cbd5e0; border-radius: 3px; background: #fff;
+}
+.docfold__thumb i { display: block; height: 2px; border-radius: 1px; background: #d5dce4; }
+.docfold__thumb i:first-child { height: 3px; width: 70%; background: #9aa5b1; }
+.docfold__thumb i.hl { background: var(--attention-edge); }
+.docfold__text { min-width: 0; flex: 1; }
+.docfold__title { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; }
+.docfold__meta { display: block; margin-top: 1px; font-size: 11px; color: var(--text-muted); }
+.docfold__excerpt {
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  margin-top: 5px; font: 12px/1.5 var(--font-doc); color: #4a545e;
+}
+.docfold[open] .docfold__excerpt { display: none; }
+.docfold__toggle { flex-shrink: 0; }
+.docfold__toggle .icon { transition: transform .15s ease; }
+.docfold[open] .docfold__toggle .icon { transform: rotate(180deg); }
+.docfold__label-close, .docfold[open] .docfold__label-open { display: none; }
+.docfold[open] .docfold__label-close { display: inline; }
+.docfold > .paper-wrap { margin: 14px 14px 18px; }
+.docfold .paper { box-shadow: var(--shadow-card); }
 .msg--doc .paper-wrap::before { inset: 6px -4px -6px 4px; }
 .msg--doc .paper__body { padding: 24px 28px 22px; }
 .msg { display: flex; gap: 10px; }
@@ -625,6 +652,9 @@ p .cite { margin-left: 4px; }
   .card-menu { top: 2px; right: 2px; }
   .source-card__body { padding-right: 40px; }
   .composer textarea, .edit-block textarea, .card-form input[type="text"] { font-size: 16px; }
+  .docfold__summary { flex-wrap: wrap; }
+  .docfold__toggle { margin-left: auto; }
+  .docfold > .paper-wrap { margin: 10px 8px 14px; }
   .chat--main { min-height: 0; }
   .chat--main .composer { position: static; }
   .btn--send { width: 44px; min-height: 44px; }
