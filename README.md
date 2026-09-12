@@ -16,8 +16,7 @@ Fonts: Inter with Arial fallback, Georgia with serif fallback. No font files shi
 
 ## What works without JavaScript
 
-- **Evidence selection.** `E1`, `E2`, `E3` and inline citations link to `#e1`, `#e2`, `#e3`. CSS `:target` and `:has()` switch the panel, the citation, and the source card. Default is E3. `:has()` needs Chrome 105+, Safari 15.4+, or Firefox 121+.
-- **Hover cards.** Hovering or focusing a citation or source chip shows the quotation, source, page, section, and version. Below 900px the card is fixed to the bottom of the screen. Hidden from assistive technology; the evidence panel carries the same content.
+- **Evidence on hover.** Hovering or focusing a citation (`E1`, `E2`, `E3`) or the flagged phrase shows the source excerpt: the quotation with the relevant words highlighted, the source chip, page, section, and source version. The matching source card lights up at the same time. Clicking a citation jumps to that source card. `:has()` needs Chrome 105+, Safari 15.4+, or Firefox 121+.
 - **Menus, disclosures, forms.** Native `<details>`, `<input>`, `<textarea>`.
 
 ## Static controls
