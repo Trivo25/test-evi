@@ -59,6 +59,8 @@
 <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
 <symbol id="i-folder" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></symbol>
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-store" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
 </defs></svg>
 
 <input type="checkbox" id="sb-toggle" class="sr-only">
@@ -74,6 +76,7 @@
     <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-folder"/></svg><span class="sb-label">Projects</span></button>
     <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-sparkles"/></svg><span class="sb-label">Skills</span></button>
     <button type="button" class="sb-item"><svg class="icon" aria-hidden="true"><use href="#i-blocks"/></svg><span class="sb-label">Plugins</span></button>
+    <a class="sb-item" href="#marketplace"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg><span class="sb-label">Marketplace</span></a>
   </nav>
   <div class="sb-section sb-label">Recents</div>
   <nav class="sb-history" aria-label="Chat history">
@@ -470,6 +473,73 @@
     </div>
   </div>
 </div>
+<div class="modal" id="marketplace" role="dialog" aria-modal="true" aria-labelledby="market-title">
+  <a class="modal__backdrop" href="#_" aria-label="Close"></a>
+  <div class="modal__panel modal__panel--wide">
+    <div class="modal__head">
+      <svg class="icon" aria-hidden="true"><use href="#i-store"/></svg>
+      <span id="market-title" class="modal__title">Skill marketplace</span>
+      <span class="chip chip--count">2 installed</span>
+      <span class="spacer"></span>
+      <a class="btn btn--sm" href="#_"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-x"/></svg>Close</a>
+    </div>
+    <div class="market">
+      <div class="market__bar">
+        <label class="market__search"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-search"/></svg><span class="sr-only">Search skills</span><input type="search" placeholder="Search skills…"></label>
+        <div class="market__cats">
+          <label class="tog"><input type="radio" name="cat" checked>All</label>
+          <label class="tog"><input type="radio" name="cat">Legal</label>
+          <label class="tog"><input type="radio" name="cat">Research</label>
+          <label class="tog"><input type="radio" name="cat">Compliance</label>
+          <label class="tog"><input type="radio" name="cat">Writing</label>
+        </div>
+      </div>
+      <ul class="skills">
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Agreement comparison</div><div class="skill__by">evidence · verified</div></div></div>
+          <p class="skill__desc">Compare an agreement with its addenda and schedules. Exact deadlines and triggers, cited.</p>
+          <div class="skill__foot"><span class="chip">Legal</span><span class="chip chip--count"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>Installed</span></div>
+        </li>
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Deadline extractor</div><div class="skill__by">evidence · verified</div></div></div>
+          <p class="skill__desc">Lists every deadline and its triggering event across all sources in context.</p>
+          <div class="skill__foot"><span class="chip">Legal</span><button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Install</button></div>
+        </li>
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Citation checker</div><div class="skill__by">evidence · verified</div></div></div>
+          <p class="skill__desc">Rechecks every citation in a draft against the current source version.</p>
+          <div class="skill__foot"><span class="chip">Review</span><span class="chip chip--count"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>Installed</span></div>
+        </li>
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Clause finder</div><div class="skill__by">Lexforge</div></div></div>
+          <p class="skill__desc">Finds clauses by meaning, not wording, across large contract sets.</p>
+          <div class="skill__foot"><span class="chip">Legal</span><button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Install</button></div>
+        </li>
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Redline summarizer</div><div class="skill__by">Lexforge</div></div></div>
+          <p class="skill__desc">Turns tracked changes into a short list of what moved and why it matters.</p>
+          <div class="skill__foot"><span class="chip">Legal</span><button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Install</button></div>
+        </li>
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-book"/></svg></span><div><div class="skill__name">PubMed literature review</div><div class="skill__by">Northlab</div></div></div>
+          <p class="skill__desc">Pulls abstracts for a question and drafts a cited evidence table.</p>
+          <div class="skill__foot"><span class="chip">Research</span><button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Install</button></div>
+        </li>
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Policy gap check</div><div class="skill__by">Greyline</div></div></div>
+          <p class="skill__desc">Maps a policy against a regulation and lists the uncovered requirements.</p>
+          <div class="skill__foot"><span class="chip">Compliance</span><button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Install</button></div>
+        </li>
+        <li class="skill">
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Meeting notes to actions</div><div class="skill__by">Studio Tal</div></div></div>
+          <p class="skill__desc">Extracts owners, deadlines, and open questions from a transcript.</p>
+          <div class="skill__foot"><span class="chip">Writing</span><button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Install</button></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <script>
 // prototype only: echo the typed message and show the assistant thinking (it never answers)
 (function () {
@@ -520,6 +590,7 @@
         '<button type="button" class="btn btn--sm" data-fill="Compare two contracts and flag the differences.">Compare two contracts</button>' +
         '<button type="button" class="btn btn--sm" data-fill="Summarize this schedule in five bullet points.">Summarize a schedule</button>' +
         '<button type="button" class="btn btn--sm" data-fill="List every deadline and its triggering event.">Find deadlines</button>' +
+        '<button type="button" class="btn btn--sm btn--dashed" aria-label="Add custom skill"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-plus"/></svg>Add custom skill</button>' +
       '</div></div>';
     thread.querySelectorAll('[data-fill]').forEach(function (b) { b.addEventListener('click', function () { input.value = b.dataset.fill; input.focus(); }); });
     document.querySelector('.column--sources .source-list').innerHTML =
