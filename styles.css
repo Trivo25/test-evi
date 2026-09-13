@@ -589,9 +589,9 @@ mark.has-tip { cursor: help; }
 .agent__status::after { content: "reading"; animation: status-1 14s steps(1, end) forwards; }
 .agent--2 .agent__status::after { animation-name: status-2; }
 .agent--3 .agent__status::after { animation-name: status-3; }
-@keyframes status-1 { 0% { content: "reading"; } 50% { content: "found §8"; } 70% { content: "comparing"; } 86% { content: "done · no deadline"; } 100% { content: "done · no deadline"; } }
-@keyframes status-2 { 0% { content: "reading"; } 30% { content: "found §2"; } 45% { content: "comparing"; } 57% { content: "done · no deadline"; } 100% { content: "done · no deadline"; } }
-@keyframes status-3 { 0% { content: "reading"; } 25% { content: "found §4"; } 43% { content: "done · no deadline"; } 100% { content: "done · no deadline"; } }
+@keyframes status-1 { 0% { content: "reading"; } 50% { content: "found Rec. 12"; } 70% { content: "comparing"; } 86% { content: "done · no effect size"; } 100% { content: "done · no effect size"; } }
+@keyframes status-2 { 0% { content: "reading"; } 30% { content: "found §3"; } 45% { content: "comparing"; } 57% { content: "done · no effect size"; } 100% { content: "done · no effect size"; } }
+@keyframes status-3 { 0% { content: "reading"; } 25% { content: "found Results"; } 43% { content: "done · no effect size"; } 100% { content: "done · no effect size"; } }
 .agent__task { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 11px; color: var(--text-muted); }
 .agent__task .chip { padding: 0 6px; white-space: normal; overflow-wrap: anywhere; }
 .agent__num { font-weight: 600; color: var(--text); font-variant-numeric: tabular-nums; }
@@ -1029,6 +1029,46 @@ body { font-size: 14px; }
 .sidebar { background: #f1f3f6; border-right: 1px solid #e2e5ea; box-shadow: inset -1px 0 0 rgba(255, 255, 255, .5); }
 .topbar { border-bottom: 1px solid #e6e8ec; box-shadow: 0 1px 0 rgba(255, 255, 255, .6), 0 4px 16px -8px rgba(16, 24, 40, .10); position: relative; z-index: 3; }
 .src-bar, .chat__bar { border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+
+/* ---- audit pass (visual): contrast, reading width, flatter rows, targets, calmer motion ---- */
+:root { --text-muted: #5b6470; }
+.sb-section { color: #5b6470; }
+.composer textarea::placeholder { color: #6b7280; }
+.src-add__field, .market__search { color: #5b6470; }
+/* thread content spans the card; long lines are limited inside the message text instead */
+.msg__text, .msg__bubble { max-width: 78ch; }
+/* agent lanes as rows, not cards inside a card */
+.agent { background: transparent; padding: 7px 2px; border-radius: 0; border-bottom: 1px solid var(--border); }
+.agent:last-child { border-bottom: 0; }
+.agent[role="button"]:hover { background: rgba(17, 24, 39, .04); box-shadow: none; border-radius: 6px; }
+.agents { gap: 0; }
+.agents--final .agent { background: transparent; }
+/* calmer working indicator: one spinner instead of pulsing dots and a glowing mark */
+.working__dots { display: none; }
+.activity__head::before { content: ""; width: 12px; height: 12px; flex-shrink: 0; border-radius: 50%; border: 2px solid #d1d5db; border-top-color: var(--source-text); animation: spin .9s linear infinite, fade-out .3s ease 14s forwards; }
+.working__dots--live { display: inline-flex; }
+.working__dots--live i { animation: none; opacity: .6; }
+.msg--working .msg__who, .msg--working:has(.working__dots--live) .msg__who { animation: none; }
+.modal__backdrop { backdrop-filter: none; background: rgba(16, 24, 40, .45); }
+/* larger targets for the small inline controls */
+.cite { height: 22px; min-width: 30px; }
+.card-menu > summary, .msg-menu > summary { width: 28px; height: 28px; }
+@media (max-width: 900px) {
+  .composer__tools .sel:last-of-type, .composer__tools .tool-btn[aria-label="Add tools or sources"] { display: none; }
+}
+@media (max-width: 620px) {
+  .cite { height: 26px; min-width: 34px; }
+}
+
+/* activity card: visibly a surface, running and finished */
+.activity { background: #f1f4f8; border: 1px solid #dfe5ec; box-shadow: var(--elev-1); }
+.agent { border-bottom-color: #e2e7ee; }
+@keyframes activity-done {
+  0% { border-color: #dfe5ec; box-shadow: 0 0 0 0 rgba(66, 103, 81, .35); }
+  40% { border-color: #9fc2ab; box-shadow: 0 0 0 8px rgba(66, 103, 81, 0); }
+  100% { border-color: #a9cbb5; background: #e9f3ec; box-shadow: 0 0 0 0 rgba(66, 103, 81, 0); }
+}
+.activity__more summary { color: #2f5a3f; }
 
 /* states page */
 .page-intro { padding: 20px 16px 0; max-width: 1400px; margin: 0 auto; }

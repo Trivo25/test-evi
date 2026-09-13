@@ -410,8 +410,8 @@
             <label class="tog"><input type="checkbox"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-book"/></svg>PubMed</label>
             <label class="tog"><input type="checkbox" checked><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg>Tools</label>
             <button type="button" class="tool-btn" aria-label="Add tools or sources" title="Add tools or sources"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></button>
-            <label class="sel"><span class="sr-only">Mode</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg><select><option>Balanced</option><option>Careful</option><option>Quick</option></select></label>
-            <label class="sel"><span class="sr-only">Speed</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg><select><option>Standard</option><option>Fast</option><option>Thorough</option></select></label>
+            <label class="sel"><span class="sr-only">Mode</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkles"/></svg><select><option>Careful review</option><option>Balanced</option><option>Quick draft</option></select></label>
+            <label class="sel"><span class="sr-only">Speed</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-refresh"/></svg><select><option>Thorough</option><option>Fast</option></select></label>
             <span class="chip chip--source" id="composer-sources"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-files"/></svg>3 sources</span>
             </div>
             <div class="composer__end">
@@ -505,17 +505,17 @@
       </div>
       <ul class="skills">
         <li class="skill">
-          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Guideline comparison</div><div class="skill__by">evidence · verified</div></div></div>
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Guideline comparison</div><div class="skill__by">evidence</div></div></div>
           <p class="skill__desc">Compare a guideline with local protocols and trials. Exact windows and criteria, cited.</p>
           <div class="skill__foot"><span class="chip">Clinical</span><span class="chip chip--count"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>Installed</span></div>
         </li>
         <li class="skill">
-          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Dose extractor</div><div class="skill__by">evidence · verified</div></div></div>
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Dose extractor</div><div class="skill__by">evidence</div></div></div>
           <p class="skill__desc">Lists every dose, route, and timing window across all sources in context.</p>
           <div class="skill__foot"><span class="chip">Clinical</span><button type="button" class="btn btn--sm"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-download"/></svg>Install</button></div>
         </li>
         <li class="skill">
-          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Citation checker</div><div class="skill__by">evidence · verified</div></div></div>
+          <div class="skill__head"><span class="wf-icon" aria-hidden="true"><svg class="icon"><use href="#i-workflow"/></svg></span><div><div class="skill__name">Citation checker</div><div class="skill__by">evidence</div></div></div>
           <p class="skill__desc">Rechecks every citation in a brief against the current source version.</p>
           <div class="skill__foot"><span class="chip">Review</span><span class="chip chip--count"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg>Installed</span></div>
         </li>
@@ -572,6 +572,7 @@
     toBottom(true);
   }
   function toBottom(smooth) { thread.scrollTo({ top: thread.scrollHeight, behavior: smooth ? 'smooth' : 'auto' }); }
+  if (window.innerWidth >= 1200) document.querySelector('.docfold').open = true;
   toBottom(false);
   // ---- helpers for citation state
   function tipNote(cite, text) {
