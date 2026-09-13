@@ -1084,6 +1084,30 @@ body { font-size: 14px; }
 }
 .toast.is-in { opacity: 1; transform: translate(-50%, 0); }
 
+/* activity card: compact and quiet; a hairline surface with a light tint, not a grey block */
+.activity { max-width: 520px; padding: 8px 10px 9px; background: #fbfcfd; border: 1px solid #dfe5ec; box-shadow: none; }
+.activity__head { font-size: 12px; gap: 7px; }
+.activity__head::before { width: 10px; height: 10px; border-width: 1.5px; }
+.activity__pct { font-size: 11px; }
+.activity__bar { height: 3px; margin: 6px 0 4px; }
+.agent { grid-template-columns: 18px minmax(0, 1fr) 56px; gap: 7px; padding: 5px 0; border-bottom-color: #eef1f4; }
+.agent__mark { width: 18px; height: 18px; border-radius: 5px; }
+.agent__mark .icon { width: 10px; height: 10px; }
+.agent__name { font-size: 12px; }
+.agent__status { font-size: 11px; }
+.agent__task { font-size: 11px; gap: 5px; }
+.agent__task .chip { padding: 0 5px; font-size: 11px; }
+.agent__bar { height: 3px; }
+.steps { gap: 3px 10px; margin-top: 6px; font-size: 11px; }
+.activity__more { max-height: 0; margin-top: 0; overflow: hidden; animation: more-in .4s ease 17.4s forwards; }
+@keyframes more-in { to { max-height: 800px; margin-top: 4px; opacity: 1; } }
+.activity__more summary { min-height: 22px; font-size: 12px; }
+@keyframes activity-done {
+  0% { border-color: #dfe5ec; box-shadow: 0 0 0 0 rgba(66, 103, 81, .3); }
+  40% { border-color: #9fc2ab; box-shadow: 0 0 0 6px rgba(66, 103, 81, 0); }
+  100% { border-color: #b7d3c0; background: #f3f9f4; box-shadow: none; }
+}
+
 /* states page */
 .page-intro { padding: 20px 16px 0; max-width: 1400px; margin: 0 auto; }
 .page-intro p { max-width: 640px; color: var(--text-muted); font-size: 13px; }
@@ -1166,6 +1190,6 @@ body { font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .activity__more { opacity: 1; }
+  .activity__more { opacity: 1; max-height: none; margin-top: 4px; }
   * { transition: none !important; animation: none !important; }
 }
