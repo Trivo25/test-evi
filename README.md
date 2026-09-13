@@ -21,7 +21,7 @@ Fonts: Inter with Arial fallback, Georgia with serif fallback. No font files shi
 
 ## Static controls
 
-Source menus, pin, rename, replace, remove, Edit paragraph, the formatting bar, and the composer toolbar are visual only. Clicking them does nothing. Send echoes your text and shows the assistant thinking indefinitely. No AI call, PDF processing, authentication, or storage.
+Pin, rename, Edit paragraph, the formatting bar, and the composer toolbar are visual only. Replace file and Remove from project change citation states on the page only. Send echoes your text and shows the assistant thinking indefinitely. No AI call, PDF processing, authentication, or storage.
 
 ## Verification
 
