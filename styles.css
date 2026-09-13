@@ -741,14 +741,14 @@ mark.has-tip { cursor: help; }
 
 /* source card lights up when its citation is hovered, focused, or targeted */
 .workspace .sel-tag { display: none; }
-.source-card:target, .workspace:has(a[href="#src-agreement"]:hover, a[href="#src-agreement"]:focus-visible) #src-agreement,
-.workspace:has(a[href="#src-addendum"]:hover, a[href="#src-addendum"]:focus-visible) #src-addendum,
-.workspace:has(a[href="#src-schedule"]:hover, a[href="#src-schedule"]:focus-visible, mark.has-tip:hover) #src-schedule {
+.source-card:target, .workspace:has(a[href="#src-guideline"]:hover, a[href="#src-guideline"]:focus-visible) #src-guideline,
+.workspace:has(a[href="#src-protocol"]:hover, a[href="#src-protocol"]:focus-visible) #src-protocol,
+.workspace:has(a[href="#src-trial"]:hover, a[href="#src-trial"]:focus-visible, mark.has-tip:hover) #src-trial {
   background: var(--source-bg); border-color: var(--source-edge); box-shadow: 0 0 0 1px var(--source-edge), var(--shadow-card);
 }
-.source-card:target .sel-tag, .workspace:has(a[href="#src-agreement"]:hover, a[href="#src-agreement"]:focus-visible) #src-agreement .sel-tag,
-.workspace:has(a[href="#src-addendum"]:hover, a[href="#src-addendum"]:focus-visible) #src-addendum .sel-tag,
-.workspace:has(a[href="#src-schedule"]:hover, a[href="#src-schedule"]:focus-visible, mark.has-tip:hover) #src-schedule .sel-tag { display: inline-flex; }
+.source-card:target .sel-tag, .workspace:has(a[href="#src-guideline"]:hover, a[href="#src-guideline"]:focus-visible) #src-guideline .sel-tag,
+.workspace:has(a[href="#src-protocol"]:hover, a[href="#src-protocol"]:focus-visible) #src-protocol .sel-tag,
+.workspace:has(a[href="#src-trial"]:hover, a[href="#src-trial"]:focus-visible, mark.has-tip:hover) #src-trial .sel-tag { display: inline-flex; }
 .source-card { scroll-margin-top: 16px; }
 
 /* hover cards on citations and the flagged phrase (css only, also on keyboard focus) */

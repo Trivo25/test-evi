@@ -1,6 +1,6 @@
 # Evidence workspace prototype
 
-Static HTML and CSS. Three objects: source document, evidence excerpt, working draft. Chat is where the user requests work.
+Static HTML and CSS. Three objects: source document, evidence excerpt, working brief. Chat is where the user requests work. The example scenario is a clinical evidence review: a sepsis guideline, a hospital protocol, and a trial report.
 
 ## Open
 
@@ -8,7 +8,7 @@ Open `index.html` in a browser. No server or build step.
 
 | File | Content |
 | --- | --- |
-| `index.html` | Workspace: three sources, draft v3, conversation, evidence E3 selected. |
+| `index.html` | Workspace: a sepsis antibiotic-timing review with three clinical sources, a clinical brief, the conversation, and an agent run. |
 | `styles.css` | Tokens, components, responsive layout. |
 | `assets/icons.svg` | Local icon sprite, also inlined in each page so it works from `file://`. |
 
