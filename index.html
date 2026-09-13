@@ -61,6 +61,7 @@
 <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
 <symbol id="i-store" viewBox="0 0 24 24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2 2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7"/></symbol>
 <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
 </defs></svg>
 
 <input type="checkbox" id="sb-toggle" class="sr-only">
@@ -111,15 +112,17 @@
 
     <!-- sources -->
     <input type="checkbox" id="src-toggle" class="sr-only">
-    <aside class="column column--sources" aria-labelledby="sources-heading">
+    <aside class="column column--sources inspector" aria-labelledby="sources-heading">
       <div class="col-head src-bar">
-        <svg class="icon" aria-hidden="true"><use href="#i-files"/></svg>
-        <h2 id="sources-heading"><span class="src-label">Sources</span></h2>
-        <span class="chip chip--count src-label">3 in context</span>
-        <label class="sb-btn src-toggle" for="src-toggle" title="Collapse sources"><svg class="icon" aria-hidden="true"><use href="#i-panel-left"/></svg><span class="sr-only">Collapse sources</span></label>
+        <svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>
+        <h2 id="sources-heading"><span class="src-label">Context</span></h2>
+        <span class="chip chip--count src-label">3 sources</span>
+        <label class="sb-btn src-toggle" for="src-toggle" title="Collapse context panel"><svg class="icon" aria-hidden="true"><use href="#i-panel-left"/></svg><span class="sr-only">Collapse context panel</span></label>
       </div>
-      <div class="src-rail" aria-hidden="true"><span class="src-rail__label">Sources</span><span class="chip chip--count">3</span></div>
+      <div class="src-rail" aria-hidden="true"><span class="src-rail__label">Context</span><span class="chip chip--count">3</span></div>
 
+      <section class="ctx" aria-labelledby="ctx-sources">
+        <h3 class="ctx__title src-label" id="ctx-sources"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-files"/></svg>Sources <span class="chip chip--count">3 in context</span></h3>
       <ul class="source-list">
         <li class="source-card" id="src-guideline">
           <details class="card-menu">
@@ -199,6 +202,16 @@
         <label class="src-add__field"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-book"/></svg><span class="sr-only">Search PubMed</span><input type="search" placeholder="Search PubMed…"><button type="button" class="src-add__go" aria-label="Search PubMed"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-search"/></svg></button></label>
         <label class="btn src-add__upload"><input type="file" class="sr-only" accept="application/pdf"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-upload"/></svg>Upload PDF</label>
       </div>
+      </section>
+
+      <section class="ctx src-label" aria-labelledby="ctx-tools">
+        <h3 class="ctx__title" id="ctx-tools"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg>Tools &amp; connections</h3>
+        <ul class="conn">
+          <li class="conn__item"><span class="conn__dot conn__dot--on" aria-hidden="true"></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-book"/></svg><span class="conn__name">PubMed</span><span class="conn__state">connected</span></li>
+          <li class="conn__item"><span class="conn__dot conn__dot--on" aria-hidden="true"></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-wrench"/></svg><span class="conn__name">Clinical tools</span><span class="conn__state">2 enabled</span></li>
+          <li class="conn__item"><span class="conn__dot" aria-hidden="true"></span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-globe"/></svg><span class="conn__name">Web search</span><span class="conn__state">off</span></li>
+        </ul>
+      </section>
     </aside>
 
     <!-- working document and chat -->
@@ -574,6 +587,7 @@
   }
   function toBottom(smooth) { thread.scrollTo({ top: thread.scrollHeight, behavior: smooth ? 'smooth' : 'auto' }); }
   if (window.innerWidth >= 1200) document.querySelector('.docfold').open = true;
+  if (window.innerWidth <= 900) document.getElementById('src-toggle').checked = true; // context panel starts as a rail on small screens
   toBottom(false);
   // ---- helpers for citation state
   function tipNote(cite, text) {

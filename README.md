@@ -8,7 +8,7 @@ Open `index.html` in a browser. No server or build step.
 
 | File | Content |
 | --- | --- |
-| `index.html` | Workspace: a sepsis antibiotic-timing review with three clinical sources, a clinical brief, the conversation, and an agent run. |
+| `index.html` | Workspace: a full-width chat with a floating Context panel (sources, tools and connections) for a sepsis antibiotic-timing review, a clinical brief, and an agent run. |
 | `styles.css` | Tokens, components, responsive layout. |
 | `assets/icons.svg` | Local icon sprite, also inlined in each page so it works from `file://`. |
 
@@ -18,6 +18,7 @@ Fonts: Inter with Arial fallback, Georgia with serif fallback. No font files shi
 
 - **Evidence on hover or tap.** Hovering or focusing a citation (`E1`, `E2`, `E3`) or the flagged phrase shows the source excerpt: the quotation with the relevant words highlighted, whether the brief uses the exact words or a paraphrase, the source chip, page, and section. Clicking, tapping, or pressing Enter pins the card open and lights up the source card; clicking elsewhere or Escape releases it. `:has()` needs Chrome 105+, Safari 15.4+, or Firefox 121+.
 - **Menus, disclosures, forms.** Native `<details>`, `<input>`, `<textarea>`.
+- **Context panel.** Floats over the top right of the chat and collapses to a rail with its toggle (a hidden checkbox). It starts collapsed on screens 900px and narrower.
 
 ## Static controls
 
