@@ -235,6 +235,15 @@ p .cite { margin-left: 4px; }
   box-shadow: 0 1px 2px rgba(32, 38, 44, .04);
 }
 .column--sources .col-head { margin-bottom: 10px; }
+.src-add { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+.src-add__title { margin-bottom: 8px; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }
+.src-add__field { display: flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 4px 0 8px; border: 1px solid #cfd8e2; border-radius: 8px; background: var(--surface); color: var(--text-muted); }
+.src-add__field input { flex: 1; min-width: 0; border: 0; background: transparent; font-size: 12px; }
+.src-add__field input:focus { outline: none; }
+.src-add__field:focus-within { border-color: var(--source-text); box-shadow: 0 0 0 3px rgba(51, 94, 146, .12); }
+.src-add__go { display: grid; place-items: center; width: 26px; height: 26px; border: 0; border-radius: 6px; background: transparent; color: var(--text-muted); cursor: pointer; }
+.src-add__go:hover { background: #eef1f4; color: var(--text); }
+.src-add__upload { width: 100%; margin-top: 8px; justify-content: center; cursor: pointer; }
 .src-rail { display: none; }
 .src-rail__label { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 12px; font-weight: 600; color: var(--text); letter-spacing: .02em; }
 /* collapsed sources: the column becomes a narrow rail with the count */
