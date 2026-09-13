@@ -754,16 +754,16 @@ mark.has-tip { cursor: help; }
 /* hover cards on citations and the flagged phrase (css only, also on keyboard focus) */
 .has-tip { position: relative; }
 .tip {
-  position: absolute; left: 50%; bottom: calc(100% + 6px); z-index: 60;
+  position: absolute; left: 0; bottom: calc(100% + 6px); z-index: 60;
   display: block; width: max-content; max-width: 300px; padding: 10px 11px;
   background: var(--evidence-bg); border: 1px solid var(--evidence-border); border-radius: 5px;
   box-shadow: var(--shadow-menu);
   font: 400 12px/1.5 var(--font-ui); color: var(--text); text-align: left; white-space: normal;
-  opacity: 0; visibility: hidden; transform: translate(-50%, 2px); pointer-events: none;
+  opacity: 0; visibility: hidden; transform: translateY(2px); pointer-events: none;
   transition: opacity .12s ease, transform .12s ease, visibility 0s linear .12s;
 }
 .has-tip:hover > .tip, .has-tip:focus-visible > .tip {
-  opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: .15s, .15s, 0s;
+  opacity: 1; visibility: visible; transform: none; transition-delay: .15s, .15s, 0s;
 }
 .tip--right { left: auto; right: 0; transform: translateY(2px); }
 .has-tip:hover > .tip--right, .has-tip:focus-visible > .tip--right { transform: none; }

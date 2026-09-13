@@ -592,7 +592,7 @@
 
   // ---- the agents finish: stream the answer, show the diff, revise section 2, flag E3
   var answer = document.querySelector('.msg--answer');
-  var e3 = document.querySelector('#mortality-statement .cite');
+  var e3 = document.querySelector('#mortality-statement a.cite');
   function streamAnswer(done) {
     var out = document.getElementById('answer-text');
     var segs = [
@@ -613,7 +613,7 @@
   }
   function reviseSection2() {
     document.querySelectorAll('#mortality-statement, #mortality-statement-popout').forEach(function (para) {
-      var cite = para.querySelector('.cite'); cite.classList.add('cite--stale');
+      var cite = para.querySelector('a.cite'); cite.classList.add('cite--stale');
       tipNote(cite, 'The brief changed after this check · needs recheck');
       para.innerHTML = '<span class="revised">Early antibiotics were associated with lower 28-day mortality; the trial reports no effect size.</span>';
       para.appendChild(cite);
