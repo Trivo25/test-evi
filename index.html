@@ -112,7 +112,7 @@
     <!-- sources -->
     <input type="checkbox" id="src-toggle" class="sr-only">
     <aside class="column column--sources" aria-labelledby="sources-heading">
-      <div class="col-head">
+      <div class="col-head src-bar">
         <svg class="icon" aria-hidden="true"><use href="#i-files"/></svg>
         <h2 id="sources-heading"><span class="src-label">Sources</span></h2>
         <span class="chip chip--count src-label">3 in context</span>
@@ -203,12 +203,11 @@
 
     <!-- working document and chat -->
     <section class="column column--center" aria-labelledby="chat-heading">
-      <div class="col-head">
-        <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
-        <h2 id="chat-heading">Chat</h2>
-        <span class="chip chip--count">Draft v3</span>
-      </div>
       <section class="chat chat--main" aria-labelledby="chat-heading">
+        <div class="col-head chat__bar">
+          <svg class="icon" aria-hidden="true"><use href="#i-message"/></svg>
+          <h2 id="chat-heading">Chat</h2>
+        </div>
         <div class="chat__thread" id="thread">
           <div class="msg msg--user">
             <div class="msg__bubble">
@@ -237,7 +236,7 @@
                   <span class="docfold__thumb" aria-hidden="true"><i></i><i></i><i></i><i class="hl"></i><i></i></span>
                   <span class="docfold__text">
                     <span class="docfold__title">Review brief <span class="badge-draft">DRAFT</span></span>
-                    <span class="docfold__meta">Draft v3 · 3 linked passages · Human review pending</span>
+                    <span class="docfold__meta">3 linked passages · Human review pending</span>
                     <span class="docfold__excerpt">Obligations &amp; open questions. Notice within 72 hours after the supplier confirms an incident. Notice within 24 hours after the supplier discovers one. The periods and the triggers differ.</span>
                   </span>
                   <span class="docfold__actions">
@@ -431,7 +430,6 @@
       <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
       <span id="modal-title" class="modal__title">Review brief</span>
       <span class="badge-draft">DRAFT</span>
-      <span class="chip chip--count">Draft v3</span>
       <span class="spacer"></span>
       <a class="btn btn--sm" href="#_"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-x"/></svg>Close</a>
     </div>
@@ -605,7 +603,6 @@
     document.querySelector('.column--sources .col-head .chip').textContent = '0 in context';
     document.querySelector('.src-rail .chip').textContent = '0';
     document.getElementById('composer-sources').lastChild.textContent = '0 sources';
-    var draftChip = document.querySelector('.column--center .col-head .chip'); if (draftChip) draftChip.remove();
     document.querySelector('.crumbs .current').textContent = 'New chat';
     var active = document.querySelector('.sb-chat.is-active'); if (active) { active.classList.remove('is-active'); active.removeAttribute('aria-current'); }
     var hist = document.querySelector('.sb-history');

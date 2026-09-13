@@ -234,7 +234,8 @@ p .cite { margin-left: 4px; }
   border: 1px solid var(--border); border-radius: 6px;
   box-shadow: 0 1px 2px rgba(32, 38, 44, .04);
 }
-.column--sources .col-head { margin-bottom: 10px; }
+.src-bar { height: 42px; margin: -10px -10px 12px; padding: 0 10px; border-bottom: 1px solid var(--border); background: #f7f9fb; border-radius: 6px 6px 0 0; }
+.workspace:has(#src-toggle:checked) .src-bar { height: auto; margin: -10px -6px 12px; padding: 8px 6px; }
 .src-add { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
 .src-add__title { margin-bottom: 8px; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }
 .src-add__field { display: flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 4px 0 8px; border: 1px solid #cfd8e2; border-radius: 4px; background: var(--surface); color: var(--text-muted); }
@@ -453,6 +454,7 @@ mark.has-tip { cursor: help; }
   padding: 16px 16px 12px;
 }
 .chat--main { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.chat__bar { flex-shrink: 0; height: 42px; margin: -16px -16px 12px; padding: 0 16px; border-bottom: 1px solid var(--border); background: #f7f9fb; border-radius: 6px 6px 0 0; }
 .chat--main .chat__thread { overflow-y: auto; min-height: 0; padding-right: 6px; margin-right: -6px; overscroll-behavior: contain; }
 .chat--main .composer { flex-shrink: 0; }
 .chat--main .chat__thread { flex: 1; }
