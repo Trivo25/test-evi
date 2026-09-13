@@ -430,7 +430,7 @@
 
 <div class="modal" id="doc-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <a class="modal__backdrop" href="#_" aria-label="Close"></a>
-  <div class="modal__panel">
+  <div class="modal__panel" tabindex="-1">
     <div class="modal__head">
       <svg class="icon" aria-hidden="true"><use href="#i-file-pen"/></svg>
       <span id="modal-title" class="modal__title">Clinical brief</span>
@@ -484,7 +484,7 @@
 </div>
 <div class="modal" id="marketplace" role="dialog" aria-modal="true" aria-labelledby="market-title">
   <a class="modal__backdrop" href="#_" aria-label="Close"></a>
-  <div class="modal__panel modal__panel--wide">
+  <div class="modal__panel modal__panel--wide" tabindex="-1">
     <div class="modal__head">
       <svg class="icon" aria-hidden="true"><use href="#i-store"/></svg>
       <span id="market-title" class="modal__title">Skill marketplace</span>
@@ -549,6 +549,7 @@
   </div>
 </div>
 
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script>
 // prototype only: echoes typed messages, streams the scripted answer, and simulates source changes; nothing is sent anywhere
 (function () {
@@ -715,6 +716,78 @@
     statuses = ['Reading your message', 'Checking your sources', 'Drafting a reply'];
     input.value = ''; input.focus();
   });
+  // ---- evidence cards: click, Enter, or Space pins a card open; click elsewhere or Escape releases it
+  function unpin() { document.querySelectorAll('.has-tip.is-pinned').forEach(function (el) { el.classList.remove('is-pinned'); }); }
+  document.addEventListener('click', function (e) {
+    var t = e.target.closest('.has-tip');
+    if (!t) { if (!e.target.closest('.tip')) unpin(); return; }
+    if (e.target.closest('.tip')) return;
+    e.preventDefault();
+    var was = t.classList.contains('is-pinned'); unpin();
+    if (!was) { t.classList.add('is-pinned'); var href = t.getAttribute('href'); if (href && href.charAt(0) === '#') flashCard(href.slice(1)); }
+  });
+  document.addEventListener('keydown', function (e) {
+    var t = e.target.closest && e.target.closest('.has-tip');
+    if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); t.click(); }
+  });
+
+  // ---- dialogs: Escape closes, focus moves in on open and back on close, Tab stays inside
+  var opener = null;
+  document.addEventListener('click', function (e) { var a = e.target.closest('a[href="#doc-modal"], a[href="#marketplace"]'); if (a) opener = a; });
+  function openDialog() {
+    var m = document.querySelector('.modal:target'); if (!m) return;
+    if (!opener || opener === document.body) opener = document.activeElement;
+    var panel = m.querySelector('.modal__panel'); panel.focus();
+  }
+  function closeDialog() {
+    if (!document.querySelector('.modal:target')) return;
+    location.replace('#_'); // clears :target without adding a history entry; no element has this id, so nothing scrolls
+    if (opener && opener.focus) opener.focus();
+    opener = null;
+  }
+  window.addEventListener('hashchange', openDialog); openDialog();
+  document.addEventListener('click', function (e) { if (e.target.closest('.modal__backdrop, .modal a[href="#_"]')) { e.preventDefault(); closeDialog(); } });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      if (document.querySelector('.modal:target')) { closeDialog(); return; }
+      var open = document.querySelector('.card-menu[open], .msg-menu[open]');
+      if (open) { open.removeAttribute('open'); open.querySelector('summary').focus(); return; }
+      unpin();
+    }
+    if (e.key === 'Tab') {
+      var m = document.querySelector('.modal:target'); if (!m) return;
+      var f = m.querySelectorAll('a[href], button, input, select, textarea, [tabindex="-1"]');
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && (document.activeElement === first || document.activeElement === m.querySelector('.modal__panel'))) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  // menus close when clicking elsewhere
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.card-menu[open], .msg-menu[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
+  });
+
+  // ---- inert controls say so instead of doing nothing
+  var toast = document.getElementById('toast'), toastTimer;
+  function notify(text) {
+    toast.textContent = text; toast.hidden = false; toast.classList.add('is-in');
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.classList.remove('is-in'); toast.hidden = true; }, 2600);
+  }
+  var inert = [
+    ['.sb-item:not([href])', 'Navigation'], ['.sb-account', 'Account'], ['.pin-btn', 'Pin'], ['.menu button:not([data-action]):not(.menu__danger)', 'Rename'],
+    ['.msg-menu button[data-action="branch"]', 'Branch into new chat'], ['.msg-menu button[data-action="regenerate"]', 'Regenerate'],
+    ['.fmt-btn, .fmt-edit', 'Formatting'], ['.tool-btn[aria-label="Voice input"]', 'Voice input'], ['.tool-btn[aria-label="Add tools or sources"]', 'Add tools or sources'],
+    ['.src-add__go', 'PubMed search'], ['.skill .btn', 'Install'], ['.btn--dashed', 'Add custom skill'], ['.sb-btn[title="Collapse sidebar"]', null]
+  ];
+  inert.forEach(function (pair) {
+    document.querySelectorAll(pair[0]).forEach(function (el) {
+      if (!pair[1]) return;
+      el.classList.add('is-proto'); el.title = 'Not wired in this prototype';
+      el.addEventListener('click', function () { notify(pair[1] + ' is not wired in this prototype.'); });
+    });
+  });
+  document.querySelectorAll('input[type="file"]').forEach(function (f) { f.addEventListener('change', function () { notify('Uploads are not processed in this prototype.'); f.value = ''; }); });
+  document.querySelector('.src-add__field input').addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); notify('PubMed search is not wired in this prototype.'); } });
   send.addEventListener('click', submit);
   input.addEventListener('keydown', function (e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submit(); } });
 })();
